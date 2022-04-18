@@ -32,6 +32,9 @@ class HeadersBordesRedondeados extends StatelessWidget {
 }
 
 class Headers extends StatelessWidget {
+  final Color color;
+
+  const Headers({required this.color});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +42,7 @@ class Headers extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         child: CustomPaint(
-          painter: _HeaderMultiOndasPainter(),
+          painter: _HeaderMultiOndasPainter(color),
         ),
       ),
     );
@@ -222,10 +225,13 @@ class _HeaderGradientPainter extends CustomPainter {
 }
 
 class _HeaderMultiOndasPainter extends CustomPainter {
+  final Color color;
+
+  _HeaderMultiOndasPainter(this.color);
   @override
   void paint(Canvas canvas, Size size) {
     final lapiz = Paint();
-    lapiz.color = Color(0xff615aab);
+    lapiz.color = color; // Color(0xff615aab);
     lapiz.style = PaintingStyle.fill;
     lapiz.strokeWidth = 2.0;
 

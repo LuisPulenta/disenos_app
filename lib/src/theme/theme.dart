@@ -14,7 +14,10 @@ class ThemeChanger with ChangeNotifier {
       case 1: //ligth
         _darkTheme = false;
         _customTheme = false;
-        _currentTheme = ThemeData.light();
+        _currentTheme = ThemeData.light().copyWith(
+            colorScheme:
+                ColorScheme.fromSwatch().copyWith(secondary: Colors.pink));
+        ;
         break;
 
       case 2: //dark
@@ -31,7 +34,10 @@ class ThemeChanger with ChangeNotifier {
       default:
         _darkTheme = false;
         _customTheme = false;
-        _currentTheme = ThemeData.light();
+        _currentTheme = ThemeData.light().copyWith(
+            colorScheme:
+                ColorScheme.fromSwatch().copyWith(secondary: Colors.pink));
+        ;
         break;
     }
   }
@@ -42,7 +48,10 @@ class ThemeChanger with ChangeNotifier {
     if (value) {
       _currentTheme = ThemeData.dark();
     } else {
-      _currentTheme = ThemeData.light();
+      _currentTheme = ThemeData.light().copyWith(
+          colorScheme:
+              ColorScheme.fromSwatch().copyWith(secondary: Colors.pink));
+      ;
     }
     notifyListeners();
   }
@@ -50,6 +59,21 @@ class ThemeChanger with ChangeNotifier {
   set customTheme(bool value) {
     _darkTheme = false;
     _customTheme = value;
+    if (value) {
+      _currentTheme = ThemeData.dark().copyWith(
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.pink),
+        primaryColor: Colors.white,
+        scaffoldBackgroundColor: Color(0xff16202b),
+        textTheme: TextTheme(
+          bodyText1: TextStyle(color: Colors.yellowAccent),
+        ),
+      );
+    } else {
+      _currentTheme = ThemeData.light().copyWith(
+          colorScheme:
+              ColorScheme.fromSwatch().copyWith(secondary: Colors.pink));
+      ;
+    }
     notifyListeners();
   }
 }

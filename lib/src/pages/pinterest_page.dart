@@ -1,3 +1,4 @@
+import 'package:disenos_app/src/theme/theme.dart';
 import 'package:disenos_app/src/widgets/pinterest_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -26,41 +27,54 @@ class PinterestPage extends StatelessWidget {
 class _PinterestMenuLocation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final widthPantalla = MediaQuery.of(context).size.width;
+    double widthPantalla = MediaQuery.of(context).size.width;
     final mostrar = Provider.of<_MenuModel>(context).mostrar;
+    final appTheme = Provider.of<ThemeChanger>(context);
+    final accentColor = appTheme.currentTheme.colorScheme.secondary;
+
+    if (widthPantalla > 500) {
+      widthPantalla = widthPantalla - 300;
+    }
+
     return Positioned(
         bottom: 15,
         child: Container(
           width: widthPantalla,
-          child: Align(
-            child: PinterestMenu(
-              mostrar: mostrar,
-              backgroundColor: Colors.yellow,
-              activeColor: Colors.teal,
-              inactiveColor: Colors.grey,
-              items: [
-                PinterestButton(
-                    icon: Icons.pie_chart,
-                    onPressed: () {
-                      print('Icon pie_chart');
-                    }),
-                PinterestButton(
-                    icon: Icons.search,
-                    onPressed: () {
-                      print('Icon search');
-                    }),
-                PinterestButton(
-                    icon: Icons.notifications,
-                    onPressed: () {
-                      print('Icon notifications');
-                    }),
-                PinterestButton(
-                    icon: Icons.supervised_user_circle,
-                    onPressed: () {
-                      print('Icon supervised_user_circle');
-                    }),
-              ],
-            ),
+          child: Row(
+            children: [
+              Spacer(),
+              PinterestMenu(
+                mostrar: mostrar,
+                backgroundColor: appTheme.darkTheme
+                    ? appTheme.currentTheme.scaffoldBackgroundColor
+                    : Colors.yellow,
+                activeColor: appTheme.darkTheme ? accentColor : Colors.teal,
+                inactiveColor: Colors.grey,
+                items: [
+                  PinterestButton(
+                      icon: Icons.pie_chart,
+                      onPressed: () {
+                        print('Icon pie_chart');
+                      }),
+                  PinterestButton(
+                      icon: Icons.search,
+                      onPressed: () {
+                        print('Icon search');
+                      }),
+                  PinterestButton(
+                      icon: Icons.notifications,
+                      onPressed: () {
+                        print('Icon notifications');
+                      }),
+                  PinterestButton(
+                      icon: Icons.supervised_user_circle,
+                      onPressed: () {
+                        print('Icon supervised_user_circle');
+                      }),
+                ],
+              ),
+              Spacer(),
+            ],
           ),
         ));
   }
@@ -101,12 +115,18 @@ class _PinterestGridState extends State<PinterestGrid> {
 
   @override
   Widget build(BuildContext context) {
+    int count;
+    if (MediaQuery.of(context).size.width > 500) {
+      count = 3;
+    } else {
+      count = 2;
+    }
     return GridView.custom(
       controller: controller,
       physics: BouncingScrollPhysics(),
       padding: EdgeInsets.symmetric(horizontal: 10),
       gridDelegate: SliverWovenGridDelegate.count(
-        crossAxisCount: 2,
+        crossAxisCount: count,
         pattern: [
           WovenGridTile(1),
           WovenGridTile(

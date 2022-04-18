@@ -1,20 +1,35 @@
+import 'package:disenos_app/src/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:disenos_app/src/widgets/slideshow.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class SlideshowPage extends StatelessWidget {
   const SlideshowPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    bool isLarge;
+    if (MediaQuery.of(context).size.height > 500) {
+      isLarge = true;
+    } else {
+      isLarge = false;
+    }
+
+    final children = [
+      Expanded(child: miSlideshow()),
+      Expanded(child: miSlideshow()),
+    ];
+
     return Scaffold(
       appBar: AppBar(title: Text('SlideshowPage')),
-      body: Column(
-        children: [
-          Expanded(child: miSlideshow()),
-          Expanded(child: miSlideshow()),
-        ],
-      ),
+      body: isLarge
+          ? Column(
+              children: children,
+            )
+          : Row(
+              children: children,
+            ),
     );
   }
 }
@@ -26,11 +41,14 @@ class miSlideshow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appTheme = Provider.of<ThemeChanger>(context);
+    final accentColor = appTheme.currentTheme.colorScheme.secondary;
+
     return Slideshow(
       bulletPrimario: 15,
       bulletSecundario: 10,
       //puntosArriba: true,
-      colorPrimario: Colors.red,
+      colorPrimario: appTheme.darkTheme ? accentColor : Colors.red,
       colorSecundario: Colors.yellow,
       slides: <Widget>[
         SvgPicture.asset('assets/slide-1.svg'),

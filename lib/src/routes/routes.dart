@@ -1,3 +1,4 @@
+import 'package:disenos_app/src/pages/colores_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -39,6 +40,11 @@ final pageRoutes = <_Route>[
       name: 'Silvers',
       screen: const SliverListPage(),
       icon: FontAwesomeIcons.mobile),
+  _Route(
+      route: 'colores',
+      name: 'Colores',
+      screen: const ColoresPage(),
+      icon: FontAwesomeIcons.shapes),
 ];
 
 // static Map<String, Widget Function(BuildContext)> getAppRoutes() {

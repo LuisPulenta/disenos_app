@@ -1,5 +1,7 @@
+import 'package:disenos_app/src/theme/theme.dart';
 import 'package:disenos_app/src/widgets/radial_progress.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class GraficasCircularesPage extends StatefulWidget {
   const GraficasCircularesPage({Key? key}) : super(key: key);
@@ -12,6 +14,9 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
   double porcentaje = 0.0;
   @override
   Widget build(BuildContext context) {
+    final appTheme = Provider.of<ThemeChanger>(context);
+    final accentColor = appTheme.currentTheme.colorScheme.secondary;
+
     return Scaffold(
       appBar: AppBar(title: Text('GraficasCircularesPage')),
       body: Column(
@@ -21,12 +26,14 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               CustomRadialProgress(
-                porcentaje: porcentaje,
+                porcentaje: porcentaje * 0.5,
                 colorPrimario: Colors.amber,
-                colorSecundario: Colors.red,
+                colorSecundario:
+                    appTheme.currentTheme.textTheme.bodyText1?.color ??
+                        Colors.red,
               ),
               CustomRadialProgress(
-                porcentaje: porcentaje,
+                porcentaje: porcentaje * 0.9,
                 colorPrimario: Colors.green,
                 colorSecundario: Colors.black,
               ),
@@ -36,12 +43,12 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               CustomRadialProgress(
-                porcentaje: porcentaje,
+                porcentaje: porcentaje * 1.4,
                 colorPrimario: Colors.blue,
                 colorSecundario: Colors.grey,
               ),
               CustomRadialProgress(
-                porcentaje: porcentaje,
+                porcentaje: porcentaje * 2.6,
                 colorPrimario: Colors.orange,
                 colorSecundario: Colors.teal,
               ),
