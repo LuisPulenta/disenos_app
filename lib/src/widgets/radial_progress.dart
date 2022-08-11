@@ -11,10 +11,10 @@ class RadialProgress extends StatefulWidget {
 
   RadialProgress(
       {required this.porcentaje,
-      required this.colorPrimario,
-      required this.colorSecundario,
-      required this.grosorPrimario,
-      required this.grosorSecundario});
+      this.colorPrimario = Colors.blue,
+      this.colorSecundario = Colors.yellow,
+      this.grosorPrimario = 10,
+      this.grosorSecundario = 20});
 
   @override
   State<RadialProgress> createState() => _RadialProgressState();
@@ -29,7 +29,7 @@ class _RadialProgressState extends State<RadialProgress>
     porcentajeAnterior = widget.porcentaje;
     controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 200),
+      duration: Duration(milliseconds: 800),
     );
 
     // controller.addListener(() {
@@ -105,8 +105,8 @@ class _MiRadialProgress extends CustomPainter {
     //Arco
     final paintArco = new Paint()
       ..strokeWidth = grosorPrimario
-      //..color = colorPrimario
-      ..shader = gradiente.createShader(rect)
+      ..color = colorPrimario
+      //..shader = gradiente.createShader(rect)
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
 

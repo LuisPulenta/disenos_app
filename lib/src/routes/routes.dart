@@ -1,4 +1,5 @@
 import 'package:disenos_app/src/pages/colores_page.dart';
+import 'package:disenos_app/src/retos/cuadrado_animado_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -24,6 +25,11 @@ final pageRoutes = <_Route>[
       route: 'cuadroanimado',
       name: 'Cuadro animado',
       screen: const AnimacionesPage(),
+      icon: FontAwesomeIcons.peopleCarryBox),
+  _Route(
+      route: 'cuadroanimado2',
+      name: 'Cuadro animado 2',
+      screen: CuadradoAnimadoPage(),
       icon: FontAwesomeIcons.peopleCarryBox),
   _Route(
       route: 'barraprogreso',

@@ -17,6 +17,7 @@ class Slideshow extends StatelessWidget {
       this.bulletPrimario = 12.0,
       this.bulletSecundario = 12.0});
 
+//------------------------ Pantalla ----------------------------------
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -36,6 +37,8 @@ class Slideshow extends StatelessWidget {
     );
   }
 }
+
+//------------------------ _CrearEstructuraSlideshow -----------------------
 
 class _CrearEstructuraSlideshow extends StatelessWidget {
   const _CrearEstructuraSlideshow({
@@ -70,6 +73,8 @@ class _CrearEstructuraSlideshow extends StatelessWidget {
   }
 }
 
+//------------------------ _Slides ----------------------------------
+
 class _Slides extends StatefulWidget {
   final List<Widget> slides;
 
@@ -80,8 +85,11 @@ class _Slides extends StatefulWidget {
 }
 
 class _SlidesState extends State<_Slides> {
+//------------------------ Variables ----------------------------------
+
   final pageViewController = PageController();
 
+//------------------------ initState ----------------------------------
   @override
   void initState() {
     pageViewController.addListener(() {
@@ -97,6 +105,7 @@ class _SlidesState extends State<_Slides> {
     super.dispose();
   }
 
+//------------------------ Pantalla ----------------------------------
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -114,6 +123,8 @@ class _SlidesState extends State<_Slides> {
   }
 }
 
+//------------------------ _Slide ----------------------------------
+
 class _Slide extends StatelessWidget {
   final Widget slide;
   const _Slide(
@@ -129,6 +140,8 @@ class _Slide extends StatelessWidget {
         child: slide);
   }
 }
+
+//------------------------ _Dots ----------------------------------
 
 class _Dots extends StatelessWidget {
   final int totalSlides;
@@ -153,6 +166,8 @@ class _Dots extends StatelessWidget {
     );
   }
 }
+
+//------------------------ _Dot ----------------------------------
 
 class _Dot extends StatelessWidget {
   final int index;
@@ -185,6 +200,7 @@ class _Dot extends StatelessWidget {
   }
 }
 
+//------------------------ _SlideshowModel ----------------------------------
 class _SlideshowModel with ChangeNotifier {
   double _currentPage = 0;
   Color _colorPrimario = Colors.blue;

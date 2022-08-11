@@ -18,7 +18,10 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
     final accentColor = appTheme.currentTheme.colorScheme.secondary;
 
     return Scaffold(
-      appBar: AppBar(title: Text('GraficasCircularesPage')),
+      appBar: AppBar(
+        title: Text('Graficas Circulares'),
+        centerTitle: true,
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -27,10 +30,8 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
             children: [
               CustomRadialProgress(
                 porcentaje: porcentaje * 0.5,
-                colorPrimario: Colors.amber,
-                colorSecundario:
-                    appTheme.currentTheme.textTheme.bodyText1?.color ??
-                        Colors.red,
+                colorPrimario: Colors.blue,
+                colorSecundario: Colors.orange,
               ),
               CustomRadialProgress(
                 porcentaje: porcentaje * 0.9,
@@ -98,15 +99,15 @@ class CustomRadialProgress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
-      width: 100,
+      height: 150,
+      width: 150,
       //color: Colors.red,
       child: RadialProgress(
         porcentaje: porcentaje,
         colorPrimario: colorPrimario,
         colorSecundario: colorSecundario,
-        grosorPrimario: 10,
-        grosorSecundario: 20,
+        grosorPrimario: 8,
+        grosorSecundario: 4,
       ),
       //child: Text('Porcentaje: ${porcentaje}%',style: TextStyle(fontSize: 30),),
     );

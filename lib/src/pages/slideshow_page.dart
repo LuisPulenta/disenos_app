@@ -17,8 +17,8 @@ class SlideshowPage extends StatelessWidget {
     }
 
     final children = [
-      Expanded(child: miSlideshow()),
-      Expanded(child: miSlideshow()),
+      Expanded(flex: 2, child: miSlideshow()),
+      Expanded(flex: 1, child: miSlideshow()),
     ];
 
     return Scaffold(
@@ -45,17 +45,21 @@ class miSlideshow extends StatelessWidget {
     final accentColor = appTheme.currentTheme.colorScheme.secondary;
 
     return Slideshow(
-      bulletPrimario: 15,
-      bulletSecundario: 10,
+      bulletPrimario: 20,
+      bulletSecundario: 12,
       //puntosArriba: true,
-      colorPrimario: appTheme.darkTheme ? accentColor : Colors.red,
-      colorSecundario: Colors.yellow,
+      colorPrimario: appTheme.darkTheme ? accentColor : Colors.purple,
+      colorSecundario: Colors.orange,
       slides: <Widget>[
         SvgPicture.asset('assets/slide-1.svg'),
         SvgPicture.asset('assets/slide-2.svg'),
         SvgPicture.asset('assets/slide-3.svg'),
         SvgPicture.asset('assets/slide-4.svg'),
         SvgPicture.asset('assets/slide-5.svg'),
+        SvgPicture.asset('assets/slide-6.svg'),
+        SvgPicture.asset('assets/slide-7.svg'),
+        SvgPicture.asset('assets/slide-8.svg'),
+        SvgPicture.asset('assets/slide-9.svg'),
         Scaffold(
           appBar: AppBar(title: Text('Hola')),
           body: Center(

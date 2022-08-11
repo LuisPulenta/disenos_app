@@ -2,24 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HeadersCuadrado extends StatelessWidget {
+  const HeadersCuadrado({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         height: 300,
-        color: Color(0xff615aab),
+        color: const Color(0xff615aab),
       ),
     );
   }
 }
 
 class HeadersBordesRedondeados extends StatelessWidget {
+  const HeadersBordesRedondeados({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         height: 300,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xff615aab),
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(70),
@@ -42,7 +46,14 @@ class Headers extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         child: CustomPaint(
-          painter: _HeaderMultiOndasPainter(color),
+          painter: _HeaderFoodPainter(),
+          //_HeaderGradientPainter(),
+          //_HeaderOndasPainter(),
+          //_HeaderCurvoPainter(),
+          //_HeaderPicoPainter(),
+          //_HeaderTrianguloPainter(),
+          //_HeaderDiagonalPainter(),
+          //_HeaderMultiOndasPainter(color),
         ),
       ),
     );
@@ -54,7 +65,7 @@ class _HeaderDiagonalPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final lapiz = Paint();
     //Propiedades
-    lapiz.color = Color(0xff615aab);
+    lapiz.color = const Color(0xffff0000);
     //lapiz.style = PaintingStyle.stroke;
     lapiz.style = PaintingStyle.fill;
     lapiz.strokeWidth = 2.0;
@@ -63,7 +74,7 @@ class _HeaderDiagonalPainter extends CustomPainter {
 
     //Dibujar con el path y el lapiz
     path.moveTo(0, size.height * 0.35);
-    path.lineTo(size.width, size.height * 0.3);
+    path.lineTo(size.width, size.height * 0.25);
     path.lineTo(size.width, 0);
     path.lineTo(0, 0);
     //path.moveTo(0, size.height * 0.5);
@@ -82,7 +93,7 @@ class _HeaderTrianguloPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final lapiz = Paint();
     //Propiedades
-    lapiz.color = Color(0xff615aab);
+    lapiz.color = const Color(0xff615aab);
     //lapiz.style = PaintingStyle.stroke;
     lapiz.style = PaintingStyle.fill;
     lapiz.strokeWidth = 2.0;
@@ -108,7 +119,7 @@ class _HeaderPicoPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final lapiz = Paint();
     //Propiedades
-    lapiz.color = Color(0xff615aab);
+    lapiz.color = const Color(0xff615aab);
     //lapiz.style = PaintingStyle.stroke;
     lapiz.style = PaintingStyle.fill;
     lapiz.strokeWidth = 2.0;
@@ -133,7 +144,7 @@ class _HeaderCurvoPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final lapiz = Paint();
-    lapiz.color = Color(0xff615aab);
+    lapiz.color = const Color(0xff615aab);
     lapiz.style = PaintingStyle.fill;
     lapiz.strokeWidth = 2.0;
 
@@ -153,11 +164,47 @@ class _HeaderCurvoPainter extends CustomPainter {
   }
 }
 
+class _HeaderFoodPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final lapiz = Paint();
+    lapiz.color = const Color(0xffff0000);
+    lapiz.style = PaintingStyle.fill;
+    lapiz.strokeWidth = 2.0;
+
+    final path = Path();
+
+    //Dibujar con el path y el lapiz
+    path.lineTo(0, 0);
+    path.quadraticBezierTo(size.width * 0.65, size.height * 0.05,
+        size.width * 0.7, size.height * 0.15);
+    path.quadraticBezierTo(size.width * 0.75, size.height * 0.25,
+        size.width * 0.65, size.height * 0.35);
+    path.quadraticBezierTo(size.width * 0.55, size.height * 0.45,
+        size.width * 0.65, size.height * 0.65);
+    path.quadraticBezierTo(size.width * 0.75, size.height * 0.85,
+        size.width * 0.55, size.height * 0.85);
+    path.quadraticBezierTo(size.width * 0.40, size.height * 0.85,
+        size.width * 0.38, size.height * 0.75);
+    path.quadraticBezierTo(size.width * 0.35, size.height * 0.60,
+        size.width * 0.25, size.height * 0.65);
+    path.quadraticBezierTo(
+        size.width * 0.2, size.height * 0.7, size.width * 0, size.height * 0.7);
+    path.lineTo(0, 0);
+    canvas.drawPath(path, lapiz);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
+  }
+}
+
 class _HeaderOndasPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final lapiz = Paint();
-    lapiz.color = Color(0xff615aab);
+    lapiz.color = const Color(0xff615aab);
     lapiz.style = PaintingStyle.fill;
     lapiz.strokeWidth = 2.0;
 
@@ -182,11 +229,12 @@ class _HeaderOndasPainter extends CustomPainter {
 class _HeaderGradientPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final Rect rect = Rect.fromCircle(center: Offset(0.0, 155), radius: 180);
+    final Rect rect =
+        Rect.fromCircle(center: const Offset(140.0, 155), radius: 80);
 
-    final Gradient gradiente = LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
+    const Gradient gradiente = LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
         colors: [
           Color(0xff6d05e8),
           Color(0xffc012ff),
@@ -194,9 +242,9 @@ class _HeaderGradientPainter extends CustomPainter {
           Colors.yellow,
         ],
         stops: [
+          0.1,
           0.2,
-          0.3,
-          0.8,
+          0.9,
           1.0,
         ]);
 
@@ -309,18 +357,18 @@ class IconHeader extends StatelessWidget {
         ),
         Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 80,
               width: double.infinity,
             ),
             Text(titulo1, style: (TextStyle(fontSize: 20, color: colorBlanco))),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(titulo2,
                 style: (TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
                     color: colorBlanco))),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             FaIcon(
               icon,
               size: 80,
@@ -345,7 +393,7 @@ class _IconHeaderBackground extends StatelessWidget {
       width: double.infinity,
       height: 300,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(100),
           ),
           gradient: LinearGradient(

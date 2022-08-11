@@ -16,7 +16,9 @@ class HeadersPage extends StatelessWidget {
       //   centerTitle: true,
       // ),
       body:
-          Headers(color: appTheme.darkTheme ? accentColor : Color(0xff615aab)),
+          Headers(color: appTheme.darkTheme ? accentColor : Color(0xffff0000)),
+      //HeadersCuadrado(),
+      //HeadersBordesRedondeados(),
     );
   }
 }
