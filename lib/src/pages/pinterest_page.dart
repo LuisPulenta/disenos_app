@@ -117,7 +117,7 @@ class _PinterestGridState extends State<PinterestGrid> {
   Widget build(BuildContext context) {
     int count;
     if (MediaQuery.of(context).size.width > 500) {
-      count = 3;
+      count = 4;
     } else {
       count = 2;
     }

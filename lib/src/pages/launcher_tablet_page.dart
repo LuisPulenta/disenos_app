@@ -1,5 +1,4 @@
 import 'package:disenos_app/models/layout_model.dart';
-import 'package:disenos_app/src/pages/slideshow_page.dart';
 import 'package:disenos_app/src/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -12,19 +11,18 @@ class LauncherTabletPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appTheme = Provider.of<ThemeChanger>(context);
-    final accentColor = appTheme.currentTheme.colorScheme.secondary;
 
     final layoutModel = Provider.of<LayoutModel>(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Diseños en Flutter - Tablet'),
+        title: const Text('Diseños en Flutter - Tablet'),
         centerTitle: true,
         backgroundColor: appTheme.currentTheme.colorScheme.secondary,
       ),
       body: Row(
         children: [
-          Container(
+          SizedBox(
             width: 300,
             height: double.infinity,
             child: _ListaOpciones(),
@@ -52,7 +50,7 @@ class _ListaOpciones extends StatelessWidget {
     final appTheme = Provider.of<ThemeChanger>(context).currentTheme;
 
     return ListView.separated(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       itemCount: pageRoutes.length,
       separatorBuilder: (context, i) => Divider(
         color: appTheme.primaryColorLight,
@@ -91,14 +89,14 @@ class _MenuPrincipal extends StatelessWidget {
             SafeArea(
               child: Container(
                 color: Colors.teal[200],
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 width: double.infinity,
                 height: 200,
                 child: CircleAvatar(
                   backgroundColor: accentColor,
-                  child: Text(
+                  child: const Text(
                     'LN',
-                    style: TextStyle(fontSize: 50),
+                    style: const TextStyle(fontSize: 50),
                   ),
                 ),
               ),
@@ -111,7 +109,7 @@ class _MenuPrincipal extends StatelessWidget {
                 Icons.lightbulb_outline,
                 color: accentColor,
               ),
-              title: Text('Dark Mode'),
+              title: const Text('Dark Mode'),
               trailing: Switch.adaptive(
                 value: appTheme.darkTheme,
                 onChanged: (value) {
@@ -125,7 +123,7 @@ class _MenuPrincipal extends StatelessWidget {
                 Icons.add_to_home_screen,
                 color: accentColor,
               ),
-              title: Text('Custom Theme'),
+              title: const Text('Custom Theme'),
               trailing: Switch.adaptive(
                 value: appTheme.customTheme,
                 onChanged: (value) {
