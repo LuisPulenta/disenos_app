@@ -17,12 +17,12 @@ class SlideshowPage extends StatelessWidget {
     }
 
     final children = [
-      Expanded(flex: 2, child: miSlideshow()),
-      Expanded(flex: 1, child: miSlideshow()),
+      const Expanded(flex: 2, child: MiSlideshow()),
+      const Expanded(flex: 1, child: MiSlideshow()),
     ];
 
     return Scaffold(
-      appBar: AppBar(title: Text('SlideshowPage')),
+      appBar: AppBar(title: const Text('SlideshowPage')),
       body: isLarge
           ? Column(
               children: children,
@@ -34,8 +34,8 @@ class SlideshowPage extends StatelessWidget {
   }
 }
 
-class miSlideshow extends StatelessWidget {
-  const miSlideshow({
+class MiSlideshow extends StatelessWidget {
+  const MiSlideshow({
     Key? key,
   }) : super(key: key);
 
@@ -61,7 +61,7 @@ class miSlideshow extends StatelessWidget {
         SvgPicture.asset('assets/slide-8.svg'),
         SvgPicture.asset('assets/slide-9.svg'),
         Scaffold(
-          appBar: AppBar(title: Text('Hola')),
+          appBar: AppBar(title: const Text('Hola')),
           body: Center(
             child: Container(
               height: 50,
@@ -70,8 +70,8 @@ class miSlideshow extends StatelessWidget {
             ),
           ),
         ),
-        Text('Hola Mundo'),
-        Icon(Icons.image),
+        const Text('Hola Mundo'),
+        const Icon(Icons.image),
       ],
     );
   }

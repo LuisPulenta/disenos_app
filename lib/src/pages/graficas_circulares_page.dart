@@ -1,7 +1,5 @@
-import 'package:disenos_app/src/theme/theme.dart';
 import 'package:disenos_app/src/widgets/radial_progress.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class GraficasCircularesPage extends StatefulWidget {
   const GraficasCircularesPage({Key? key}) : super(key: key);
@@ -14,12 +12,9 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
   double porcentaje = 0.0;
   @override
   Widget build(BuildContext context) {
-    final appTheme = Provider.of<ThemeChanger>(context);
-    final accentColor = appTheme.currentTheme.colorScheme.secondary;
-
     return Scaffold(
       appBar: AppBar(
-        title: Text('Graficas Circulares'),
+        title: const Text('Graficas Circulares'),
         centerTitle: true,
       ),
       body: Column(
@@ -61,11 +56,11 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
               CustomRadialProgress(
                 porcentaje: porcentaje,
                 colorPrimario: Colors.teal,
-                colorSecundario: Color.fromRGBO(251, 192, 45, 1),
+                colorSecundario: const Color.fromRGBO(251, 192, 45, 1),
               ),
               CustomRadialProgress(
                 porcentaje: porcentaje,
-                colorPrimario: Color.fromARGB(255, 16, 175, 98),
+                colorPrimario: const Color.fromARGB(255, 16, 175, 98),
                 colorSecundario: Colors.yellow,
               ),
             ],
@@ -73,7 +68,7 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.refresh),
+          child: const Icon(Icons.refresh),
           onPressed: () {
             setState(() {
               porcentaje += 10;
@@ -90,15 +85,17 @@ class CustomRadialProgress extends StatelessWidget {
   final Color colorPrimario;
   final Color colorSecundario;
   const CustomRadialProgress(
-      {required this.porcentaje,
+      {Key? key,
+      required this.porcentaje,
       required this.colorPrimario,
-      required this.colorSecundario});
+      required this.colorSecundario})
+      : super(key: key);
 
   final double porcentaje;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 150,
       width: 150,
       //color: Colors.red,

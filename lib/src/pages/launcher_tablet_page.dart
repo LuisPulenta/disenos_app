@@ -83,57 +83,55 @@ class _MenuPrincipal extends StatelessWidget {
     final accentColor = appTheme.currentTheme.colorScheme.secondary;
 
     return Drawer(
-      child: Container(
-        child: Column(
-          children: [
-            SafeArea(
-              child: Container(
-                color: Colors.teal[200],
-                padding: const EdgeInsets.all(20),
-                width: double.infinity,
-                height: 200,
-                child: CircleAvatar(
-                  backgroundColor: accentColor,
-                  child: const Text(
-                    'LN',
-                    style: const TextStyle(fontSize: 50),
-                  ),
+      child: Column(
+        children: [
+          SafeArea(
+            child: Container(
+              color: Colors.teal[200],
+              padding: const EdgeInsets.all(20),
+              width: double.infinity,
+              height: 200,
+              child: CircleAvatar(
+                backgroundColor: accentColor,
+                child: const Text(
+                  'LN',
+                  style: TextStyle(fontSize: 50),
                 ),
               ),
             ),
-            Expanded(
-              child: _ListaOpciones(),
+          ),
+          Expanded(
+            child: _ListaOpciones(),
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.lightbulb_outline,
+              color: accentColor,
             ),
-            ListTile(
-              leading: Icon(
-                Icons.lightbulb_outline,
-                color: accentColor,
-              ),
-              title: const Text('Dark Mode'),
-              trailing: Switch.adaptive(
-                value: appTheme.darkTheme,
-                onChanged: (value) {
-                  appTheme.darkTheme = value;
-                },
-                activeColor: accentColor,
-              ),
+            title: const Text('Dark Mode'),
+            trailing: Switch.adaptive(
+              value: appTheme.darkTheme,
+              onChanged: (value) {
+                appTheme.darkTheme = value;
+              },
+              activeColor: accentColor,
             ),
-            ListTile(
-              leading: Icon(
-                Icons.add_to_home_screen,
-                color: accentColor,
-              ),
-              title: const Text('Custom Theme'),
-              trailing: Switch.adaptive(
-                value: appTheme.customTheme,
-                onChanged: (value) {
-                  appTheme.customTheme = value;
-                },
-                activeColor: accentColor,
-              ),
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.add_to_home_screen,
+              color: accentColor,
             ),
-          ],
-        ),
+            title: const Text('Custom Theme'),
+            trailing: Switch.adaptive(
+              value: appTheme.customTheme,
+              onChanged: (value) {
+                appTheme.customTheme = value;
+              },
+              activeColor: accentColor,
+            ),
+          ),
+        ],
       ),
     );
   }

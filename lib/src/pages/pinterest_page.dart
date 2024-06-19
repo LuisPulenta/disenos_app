@@ -6,6 +6,8 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:provider/provider.dart';
 
 class PinterestPage extends StatelessWidget {
+  const PinterestPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -14,7 +16,7 @@ class PinterestPage extends StatelessWidget {
         body: SafeArea(
           child: Stack(
             children: [
-              PinterestGrid(),
+              const PinterestGrid(),
               _PinterestMenuLocation(),
             ],
           ),
@@ -38,11 +40,11 @@ class _PinterestMenuLocation extends StatelessWidget {
 
     return Positioned(
         bottom: 15,
-        child: Container(
+        child: SizedBox(
           width: widthPantalla,
           child: Row(
             children: [
-              Spacer(),
+              const Spacer(),
               PinterestMenu(
                 mostrar: mostrar,
                 backgroundColor: appTheme.darkTheme
@@ -54,26 +56,26 @@ class _PinterestMenuLocation extends StatelessWidget {
                   PinterestButton(
                       icon: Icons.pie_chart,
                       onPressed: () {
-                        print('Icon pie_chart');
+                        //print('Icon pie_chart');
                       }),
                   PinterestButton(
                       icon: Icons.search,
                       onPressed: () {
-                        print('Icon search');
+                        //print('Icon search');
                       }),
                   PinterestButton(
                       icon: Icons.notifications,
                       onPressed: () {
-                        print('Icon notifications');
+                        //print('Icon notifications');
                       }),
                   PinterestButton(
                       icon: Icons.supervised_user_circle,
                       onPressed: () {
-                        print('Icon supervised_user_circle');
+                        //print('Icon supervised_user_circle');
                       }),
                 ],
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ));
@@ -81,6 +83,8 @@ class _PinterestMenuLocation extends StatelessWidget {
 }
 
 class PinterestGrid extends StatefulWidget {
+  const PinterestGrid({Key? key}) : super(key: key);
+
   @override
   State<PinterestGrid> createState() => _PinterestGridState();
 }
@@ -102,7 +106,6 @@ class _PinterestGridState extends State<PinterestGrid> {
         //print('MOSTRAR');
         Provider.of<_MenuModel>(context, listen: false).mostrar = true;
       }
-      ;
     });
     super.initState();
   }
@@ -123,13 +126,13 @@ class _PinterestGridState extends State<PinterestGrid> {
     }
     return GridView.custom(
       controller: controller,
-      physics: BouncingScrollPhysics(),
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      physics: const BouncingScrollPhysics(),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       gridDelegate: SliverWovenGridDelegate.count(
         crossAxisCount: count,
         pattern: [
-          WovenGridTile(1),
-          WovenGridTile(
+          const WovenGridTile(1),
+          const WovenGridTile(
             5 / 7,
             crossAxisRatio: 0.9,
             alignment: AlignmentDirectional.centerEnd,
@@ -150,7 +153,7 @@ class _PinterestItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: Colors.blue,
           borderRadius: BorderRadius.all(Radius.circular(30))),
       child: Center(
@@ -166,10 +169,10 @@ class _PinterestItem extends StatelessWidget {
 class _MenuModel with ChangeNotifier {
   bool _mostrar = true;
 
-  bool get mostrar => this._mostrar;
+  bool get mostrar => _mostrar;
 
   set mostrar(bool valor) {
-    this._mostrar = valor;
+    _mostrar = valor;
     notifyListeners();
   }
 }

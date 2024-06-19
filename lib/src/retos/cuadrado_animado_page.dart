@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CuadradoAnimadoPage extends StatelessWidget {
-  CuadradoAnimadoPage({Key? key}) : super(key: key);
+  const CuadradoAnimadoPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       //appBar: AppBar(title: Text('CuadradoAnimadoPage')),
       body: Center(
         child: CuadradoAnimado(),
@@ -36,26 +36,27 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado>
   void initState() {
     controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 6000),
+      duration: const Duration(milliseconds: 6000),
     );
 
     moverDerecha = Tween(begin: 0.0, end: 100.0).animate(CurvedAnimation(
-        parent: controller, curve: Interval(0, 0.25, curve: Curves.bounceOut)));
+        parent: controller,
+        curve: const Interval(0, 0.25, curve: Curves.bounceOut)));
     super.initState();
 
     moverArriba = Tween(begin: 0.0, end: -100.0).animate(CurvedAnimation(
         parent: controller,
-        curve: Interval(0.25, 0.5, curve: Curves.bounceOut)));
+        curve: const Interval(0.25, 0.5, curve: Curves.bounceOut)));
     super.initState();
 
     moverIzquierda = Tween(begin: 0.0, end: -100.0).animate(CurvedAnimation(
         parent: controller,
-        curve: Interval(0.5, 0.75, curve: Curves.bounceOut)));
+        curve: const Interval(0.5, 0.75, curve: Curves.bounceOut)));
     super.initState();
 
     moverAbajo = Tween(begin: 0.0, end: 100.0).animate(CurvedAnimation(
         parent: controller,
-        curve: Interval(0.75, 1.0, curve: Curves.bounceOut)));
+        curve: const Interval(0.75, 1.0, curve: Curves.bounceOut)));
 
     controller.addListener(() {
       if (controller.status == AnimationStatus.completed) {
@@ -102,7 +103,7 @@ class _Rectangulo extends StatelessWidget {
     return Container(
       width: 70,
       height: 70,
-      decoration: BoxDecoration(color: Colors.blue),
+      decoration: const BoxDecoration(color: Colors.blue),
     );
   }
 }

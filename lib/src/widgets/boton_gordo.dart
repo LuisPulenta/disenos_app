@@ -9,11 +9,13 @@ class BotonGordo extends StatelessWidget {
   final Function onPress;
 
   const BotonGordo(
-      {required this.icon,
+      {Key? key,
+      required this.icon,
       required this.texto,
       required this.color1,
       required this.color2,
-      required this.onPress});
+      required this.onPress})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class BotonGordo extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 140,
                 width: 40,
               ),
@@ -35,21 +37,21 @@ class BotonGordo extends StatelessWidget {
                 size: 40,
                 color: Colors.white,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               Expanded(
                 child: Text(
                   texto,
-                  style: TextStyle(color: Colors.white, fontSize: 18),
+                  style: const TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
-              FaIcon(
+              const FaIcon(
                 FontAwesomeIcons.chevronRight,
                 size: 40,
                 color: Colors.white,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 40,
               ),
             ],
@@ -71,13 +73,13 @@ class _BotonGordoBackground extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 100,
-      margin: EdgeInsets.all(20),
+      margin: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Colors.red,
         boxShadow: <BoxShadow>[
           BoxShadow(
               color: Colors.black.withOpacity(0.7),
-              offset: Offset(4, 6),
+              offset: const Offset(4, 6),
               blurRadius: 10)
         ],
         borderRadius: BorderRadius.circular(15),

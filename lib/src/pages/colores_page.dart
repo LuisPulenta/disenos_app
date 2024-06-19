@@ -7,7 +7,7 @@ class ColoresPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Colores'),
+        title: const Text('Colores'),
         centerTitle: true,
       ),
       body: Center(
@@ -17,7 +17,7 @@ class ColoresPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.blue,
@@ -25,7 +25,7 @@ class ColoresPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.red,
@@ -33,7 +33,7 @@ class ColoresPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.yellow,
@@ -45,7 +45,7 @@ class ColoresPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.green,
@@ -53,7 +53,7 @@ class ColoresPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.orange,
@@ -61,7 +61,7 @@ class ColoresPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.pink,
@@ -73,7 +73,7 @@ class ColoresPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.brown,
@@ -81,7 +81,7 @@ class ColoresPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.purple,
@@ -89,7 +89,7 @@ class ColoresPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.teal,
@@ -101,7 +101,7 @@ class ColoresPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.blueAccent,
@@ -109,7 +109,7 @@ class ColoresPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.redAccent,
@@ -117,7 +117,7 @@ class ColoresPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.yellowAccent,
@@ -129,7 +129,7 @@ class ColoresPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.greenAccent,
@@ -137,7 +137,7 @@ class ColoresPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.grey,
@@ -145,7 +145,7 @@ class ColoresPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.black,
@@ -157,7 +157,7 @@ class ColoresPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.orangeAccent,
@@ -165,7 +165,7 @@ class ColoresPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.purpleAccent,
@@ -173,7 +173,7 @@ class ColoresPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 90,
                     width: 50,
                     color: Colors.tealAccent,

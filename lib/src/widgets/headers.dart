@@ -38,11 +38,11 @@ class HeadersBordesRedondeados extends StatelessWidget {
 class Headers extends StatelessWidget {
   final Color color;
 
-  const Headers({required this.color});
+  const Headers({Key? key, required this.color}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: double.infinity,
         width: double.infinity,
         child: CustomPaint(
@@ -331,11 +331,13 @@ class IconHeader extends StatelessWidget {
   final Color color2;
 
   const IconHeader(
-      {required this.icon,
+      {Key? key,
+      required this.icon,
       required this.titulo1,
       required this.titulo2,
       this.color1 = Colors.grey,
-      this.color2 = Colors.blueGrey});
+      this.color2 = Colors.blueGrey})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

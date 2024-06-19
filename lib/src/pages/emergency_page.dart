@@ -64,7 +64,7 @@ class EmergencyPage extends StatelessWidget {
                 color1: item.color1,
                 color2: item.color2,
                 onPress: () {
-                  print('hola');
+                  //print('hola');
                 },
               ),
             ))
@@ -87,7 +87,7 @@ class EmergencyPage extends StatelessWidget {
             ],
           ),
         ),
-        if (isLarge) PageHeader(),
+        if (isLarge) const PageHeader(),
       ],
     ));
   }
@@ -108,7 +108,7 @@ class BotonGordoTemp extends StatelessWidget {
       color1: const Color(0xff6989f5),
       color2: const Color(0xff906EF5),
       onPress: () {
-        print('Automotores');
+        //print('Automotores');
       },
     );
   }
@@ -117,6 +117,8 @@ class BotonGordoTemp extends StatelessWidget {
 //----------------------- PageHeader -----------------------------
 
 class PageHeader extends StatelessWidget {
+  const PageHeader({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -125,7 +127,7 @@ class PageHeader extends StatelessWidget {
           icon: FontAwesomeIcons.car,
           titulo1: 'Haz solicitado',
           titulo2: 'Servicio Mecánico',
-          color1: const Color(0xff536cf6),
+          color1: Color(0xff536cf6),
           color2: Color(0xff66A9F2),
         ),
         Positioned(

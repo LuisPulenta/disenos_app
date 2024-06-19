@@ -10,12 +10,14 @@ class Slideshow extends StatelessWidget {
   final double bulletSecundario;
 
   const Slideshow(
-      {required this.slides,
+      {Key? key,
+      required this.slides,
       this.puntosArriba = false,
       this.colorPrimario = Colors.blue,
       this.colorSecundario = Colors.grey,
       this.bulletPrimario = 12.0,
-      this.bulletSecundario = 12.0});
+      this.bulletSecundario = 12.0})
+      : super(key: key);
 
 //------------------------ Pantalla ----------------------------------
   @override
@@ -78,7 +80,7 @@ class _CrearEstructuraSlideshow extends StatelessWidget {
 class _Slides extends StatefulWidget {
   final List<Widget> slides;
 
-  _Slides({required this.slides});
+  const _Slides({required this.slides});
 
   @override
   State<_Slides> createState() => _SlidesState();
@@ -108,17 +110,15 @@ class _SlidesState extends State<_Slides> {
 //------------------------ Pantalla ----------------------------------
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: PageView(
-        controller: pageViewController,
-        // children: [
-        //   _Slide('assets/slide-1.svg'),
-        //   _Slide('assets/slide-2.svg'),
-        //   _Slide('assets/slide-3.svg'),
-        // ],
+    return PageView(
+      controller: pageViewController,
+      // children: [
+      //   _Slide('assets/slide-1.svg'),
+      //   _Slide('assets/slide-2.svg'),
+      //   _Slide('assets/slide-3.svg'),
+      // ],
 
-        children: widget.slides.map((slide) => _Slide(slide)).toList(),
-      ),
+      children: widget.slides.map((slide) => _Slide(slide)).toList(),
     );
   }
 }
@@ -136,7 +136,7 @@ class _Slide extends StatelessWidget {
     return Container(
         width: double.infinity,
         height: double.infinity,
-        padding: EdgeInsets.all(30),
+        padding: const EdgeInsets.all(30),
         child: slide);
   }
 }
@@ -190,8 +190,8 @@ class _Dot extends StatelessWidget {
     return AnimatedContainer(
       width: tamano,
       height: tamano,
-      margin: EdgeInsets.symmetric(horizontal: 5),
-      duration: Duration(milliseconds: 200),
+      margin: const EdgeInsets.symmetric(horizontal: 5),
+      duration: const Duration(milliseconds: 200),
       decoration: BoxDecoration(
         color: color,
         shape: BoxShape.circle,

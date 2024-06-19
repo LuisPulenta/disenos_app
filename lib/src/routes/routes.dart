@@ -29,7 +29,7 @@ final pageRoutes = <_Route>[
   _Route(
       route: 'cuadroanimado2',
       name: 'Cuadro animado 2',
-      screen: CuadradoAnimadoPage(),
+      screen: const CuadradoAnimadoPage(),
       icon: FontAwesomeIcons.peopleCarryBox),
   _Route(
       route: 'barraprogreso',
@@ -39,7 +39,7 @@ final pageRoutes = <_Route>[
   _Route(
       route: 'pinterest',
       name: 'Pinterest',
-      screen: PinterestPage(),
+      screen: const PinterestPage(),
       icon: FontAwesomeIcons.pinterest),
   _Route(
       route: 'silvers',

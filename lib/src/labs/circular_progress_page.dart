@@ -19,7 +19,7 @@ class _CircularProgressPageState extends State<CircularProgressPage>
   void initState() {
     controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 800),
+      duration: const Duration(milliseconds: 800),
     );
 
     controller.addListener(() {
@@ -41,10 +41,10 @@ class _CircularProgressPageState extends State<CircularProgressPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('CircularProgressPage')),
+      appBar: AppBar(title: const Text('CircularProgressPage')),
       body: Center(
         child: Container(
-          padding: EdgeInsets.all(5),
+          padding: const EdgeInsets.all(5),
           height: 300,
           width: 300,
           child: CustomPaint(
@@ -53,7 +53,7 @@ class _CircularProgressPageState extends State<CircularProgressPage>
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.refresh),
+        child: const Icon(Icons.refresh),
         onPressed: () {
           porcentaje = nuevoPorcentaje;
           nuevoPorcentaje += 10;
@@ -78,7 +78,7 @@ class _MiRadialProgress extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     //Circulo completado
-    final paint = new Paint()
+    final paint = Paint()
       ..strokeWidth = 4
       ..color = Colors.grey
       ..style = PaintingStyle.stroke;
@@ -89,7 +89,7 @@ class _MiRadialProgress extends CustomPainter {
     canvas.drawCircle(center, radio, paint);
 
     //Arco
-    final paintArco = new Paint()
+    final paintArco = Paint()
       ..strokeWidth = 10
       ..color = Colors.pink
       ..style = PaintingStyle.stroke;

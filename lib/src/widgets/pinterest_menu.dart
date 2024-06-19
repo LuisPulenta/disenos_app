@@ -32,12 +32,14 @@ class PinterestMenu extends StatelessWidget {
   //       }),
   // ];
 
-  PinterestMenu(
-      {this.mostrar = true,
+  const PinterestMenu(
+      {Key? key,
+      this.mostrar = true,
       this.backgroundColor = Colors.white,
       this.activeColor = Colors.black,
       this.inactiveColor = Colors.blueGrey,
-      required this.items});
+      required this.items})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +47,7 @@ class PinterestMenu extends StatelessWidget {
       create: (_) => _MenuModel(),
       child: AnimatedOpacity(
         opacity: (mostrar) ? 1 : 0,
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
         child: Builder(
           builder: (BuildContext context) {
             Provider.of<_MenuModel>(context).backgroundColor = backgroundColor;
@@ -78,10 +80,10 @@ class _PinterestMenuBackGround extends StatelessWidget {
       height: 60,
       decoration: BoxDecoration(
           color: backgroundColor,
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(100),
           ),
-          boxShadow: <BoxShadow>[
+          boxShadow: const <BoxShadow>[
             BoxShadow(color: Colors.black38, blurRadius: 10, spreadRadius: -5),
           ]),
     );
@@ -128,14 +130,12 @@ class _PinterestMenuButton extends StatelessWidget {
         item.onPressed();
       },
       behavior: HitTestBehavior.translucent,
-      child: Container(
-        child: Icon(
-          item.icon,
-          color: itemSeleccionado == index
-              ? menuModel.activeColor
-              : menuModel.inactiveColor,
-          size: itemSeleccionado == index ? 35 : 25,
-        ),
+      child: Icon(
+        item.icon,
+        color: itemSeleccionado == index
+            ? menuModel.activeColor
+            : menuModel.inactiveColor,
+        size: itemSeleccionado == index ? 35 : 25,
       ),
     );
   }

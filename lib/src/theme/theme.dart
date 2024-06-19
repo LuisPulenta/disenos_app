@@ -63,9 +63,9 @@ class ThemeChanger with ChangeNotifier {
       _currentTheme = ThemeData.dark().copyWith(
         colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.pink),
         primaryColor: Colors.white,
-        scaffoldBackgroundColor: Color(0xff16202b),
-        textTheme: TextTheme(
-          bodyText1: TextStyle(color: Colors.yellowAccent),
+        scaffoldBackgroundColor: const Color(0xff16202b),
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(color: Colors.yellowAccent),
         ),
       );
     } else {

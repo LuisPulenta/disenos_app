@@ -9,12 +9,14 @@ class RadialProgress extends StatefulWidget {
   final double grosorPrimario;
   final double grosorSecundario;
 
-  RadialProgress(
-      {required this.porcentaje,
+  const RadialProgress(
+      {Key? key,
+      required this.porcentaje,
       this.colorPrimario = Colors.blue,
       this.colorSecundario = Colors.yellow,
       this.grosorPrimario = 10,
-      this.grosorSecundario = 20});
+      this.grosorSecundario = 20})
+      : super(key: key);
 
   @override
   State<RadialProgress> createState() => _RadialProgressState();
@@ -25,11 +27,12 @@ class _RadialProgressState extends State<RadialProgress>
   late AnimationController controller;
   double porcentajeAnterior = 0.0;
 
+  @override
   void initState() {
     porcentajeAnterior = widget.porcentaje;
     controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 800),
+      duration: const Duration(milliseconds: 800),
     );
 
     // controller.addListener(() {
@@ -57,7 +60,7 @@ class _RadialProgressState extends State<RadialProgress>
       animation: controller,
       builder: (BuildContext context, Widget? child) {
         return Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           width: double.infinity,
           height: double.infinity,
           child: CustomPaint(
@@ -86,13 +89,16 @@ class _MiRadialProgress extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final Gradient gradiente = LinearGradient(
-        colors: <Color>[Color(0xffc012ff), Color(0xff6d05e8), Colors.orange]);
+    //final Rect rect = Rect.fromCircle(center: const Offset(0, 0), radius: 180);
 
-    final Rect rect = Rect.fromCircle(center: Offset(0, 0), radius: 180);
+    const Gradient gradiente = LinearGradient(colors: <Color>[
+      Color.fromARGB(255, 18, 26, 255),
+      Color.fromARGB(255, 232, 5, 5),
+      Color.fromARGB(255, 255, 238, 0)
+    ]);
 
     //Circulo completado
-    final paint = new Paint()
+    final paint = Paint()
       ..strokeWidth = grosorSecundario
       ..color = colorSecundario
       ..style = PaintingStyle.stroke;
@@ -103,7 +109,7 @@ class _MiRadialProgress extends CustomPainter {
     canvas.drawCircle(center, radio, paint);
 
     //Arco
-    final paintArco = new Paint()
+    final paintArco = Paint()
       ..strokeWidth = grosorPrimario
       ..color = colorPrimario
       //..shader = gradiente.createShader(rect)

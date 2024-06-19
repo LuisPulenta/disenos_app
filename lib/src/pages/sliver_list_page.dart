@@ -28,11 +28,16 @@ class _BotonNewList extends StatelessWidget {
     return ButtonTheme(
       minWidth: size.width * 0.9,
       height: 100,
-      child: RaisedButton(
+      child: ElevatedButton(
         onPressed: () {},
-        color: appTheme.darkTheme ? accentColor : Color(0xffed6762),
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(50))),
+        style: ElevatedButton.styleFrom(
+          backgroundColor:
+              appTheme.darkTheme ? accentColor : const Color(0xffed6762),
+          minimumSize: const Size(double.infinity, 40),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5),
+          ),
+        ),
         child: Text('CREATE NEW LIST',
             style: TextStyle(
                 color: appTheme.darkTheme
@@ -48,22 +53,22 @@ class _BotonNewList extends StatelessWidget {
 
 class _MainScroll extends StatelessWidget {
   final items = [
-    _ListItem('Orange', Color(0xffF08F66)),
-    _ListItem('Family', Color(0xffF2A38A)),
-    _ListItem('Subscriptions', Color(0xffF7CDD5)),
-    _ListItem('Books', Color(0xffFCEBAF)),
-    _ListItem('Orange', Color(0xffF08F66)),
-    _ListItem('Family', Color(0xffF2A38A)),
-    _ListItem('Subscriptions', Color(0xffF7CDD5)),
-    _ListItem('Books', Color(0xffFCEBAF)),
-    _ListItem('Orange', Color(0xffF08F66)),
-    _ListItem('Family', Color(0xffF2A38A)),
-    _ListItem('Subscriptions', Color(0xffF7CDD5)),
-    _ListItem('Books', Color(0xffFCEBAF)),
-    _ListItem('Orange', Color(0xffF08F66)),
-    _ListItem('Family', Color(0xffF2A38A)),
-    _ListItem('Subscriptions', Color(0xffF7CDD5)),
-    _ListItem('Books', Color(0xffFCEBAF)),
+    const _ListItem('Orange', Color(0xffF08F66)),
+    const _ListItem('Family', Color(0xffF2A38A)),
+    const _ListItem('Subscriptions', Color(0xffF7CDD5)),
+    const _ListItem('Books', Color(0xffFCEBAF)),
+    const _ListItem('Orange', Color(0xffF08F66)),
+    const _ListItem('Family', Color(0xffF2A38A)),
+    const _ListItem('Subscriptions', Color(0xffF7CDD5)),
+    const _ListItem('Books', Color(0xffFCEBAF)),
+    const _ListItem('Orange', Color(0xffF08F66)),
+    const _ListItem('Family', Color(0xffF2A38A)),
+    const _ListItem('Subscriptions', Color(0xffF7CDD5)),
+    const _ListItem('Books', Color(0xffFCEBAF)),
+    const _ListItem('Orange', Color(0xffF08F66)),
+    const _ListItem('Family', Color(0xffF2A38A)),
+    const _ListItem('Subscriptions', Color(0xffF7CDD5)),
+    const _ListItem('Books', Color(0xffFCEBAF)),
   ];
 
   @override
@@ -72,7 +77,7 @@ class _MainScroll extends StatelessWidget {
     final accentColor = appTheme.currentTheme.colorScheme.secondary;
 
     return CustomScrollView(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       slivers: [
         SliverPersistentHeader(
             floating: true,
@@ -82,13 +87,13 @@ class _MainScroll extends StatelessWidget {
               child: Container(
                 color: appTheme.currentTheme.scaffoldBackgroundColor,
                 alignment: Alignment.centerLeft,
-                child: Titulo(),
+                child: const Titulo(),
               ),
             )),
         SliverList(
           delegate: SliverChildListDelegate([
             ...items,
-            SizedBox(
+            const SizedBox(
               height: 100,
             )
           ]),
@@ -136,22 +141,23 @@ class Titulo extends StatelessWidget {
 
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           child: Text(
             'New',
             style: TextStyle(
-                color: appTheme.darkTheme ? Colors.grey : Color(0xff532128),
+                color:
+                    appTheme.darkTheme ? Colors.grey : const Color(0xff532128),
                 fontWeight: FontWeight.bold,
                 fontSize: 50),
           ),
         ),
         Stack(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Positioned(
@@ -160,12 +166,13 @@ class Titulo extends StatelessWidget {
               child: Container(
                 width: 110,
                 height: 8,
-                color: appTheme.darkTheme ? Colors.grey : Color(0xfff7cdd5),
+                color:
+                    appTheme.darkTheme ? Colors.grey : const Color(0xfff7cdd5),
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-              child: Text(
+              margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+              child: const Text(
                 'List',
                 style: TextStyle(
                     color: Color(0xffd93a30),
@@ -182,14 +189,14 @@ class Titulo extends StatelessWidget {
 
 class _ListaTareas extends StatelessWidget {
   final items = [
-    _ListItem('Orange', Color(0xffF08F66)),
-    _ListItem('Family', Color(0xffF2A38A)),
-    _ListItem('Subscriptions', Color(0xffF7CDD5)),
-    _ListItem('Books', Color(0xffFCEBAF)),
-    _ListItem('Orange', Color(0xffF08F66)),
-    _ListItem('Family', Color(0xffF2A38A)),
-    _ListItem('Subscriptions', Color(0xffF7CDD5)),
-    _ListItem('Books', Color(0xffFCEBAF)),
+    const _ListItem('Orange', Color(0xffF08F66)),
+    const _ListItem('Family', Color(0xffF2A38A)),
+    const _ListItem('Subscriptions', Color(0xffF7CDD5)),
+    const _ListItem('Books', Color(0xffFCEBAF)),
+    const _ListItem('Orange', Color(0xffF08F66)),
+    const _ListItem('Family', Color(0xffF2A38A)),
+    const _ListItem('Subscriptions', Color(0xffF7CDD5)),
+    const _ListItem('Books', Color(0xffFCEBAF)),
   ];
 
   @override
@@ -213,13 +220,13 @@ class _ListItem extends StatelessWidget {
 
     return Container(
       alignment: Alignment.centerLeft,
-      padding: EdgeInsets.all(30),
+      padding: const EdgeInsets.all(30),
       child: Text(
         titulo,
-        style: TextStyle(
+        style: const TextStyle(
             color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24),
       ),
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       height: 130,
       decoration: BoxDecoration(
         color: appTheme.darkTheme ? Colors.grey : color,

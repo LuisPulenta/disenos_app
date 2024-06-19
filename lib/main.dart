@@ -10,7 +10,7 @@ void main() => runApp(
         create: (_) => LayoutModel(),
         child: ChangeNotifierProvider(
           create: (_) => ThemeChanger(2),
-          child: MyApp(),
+          child: const MyApp(),
         ),
       ),
     );
@@ -26,6 +26,8 @@ void main() => runApp(
 //     );
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final currentTheme = Provider.of<ThemeChanger>(context).currentTheme;
