@@ -40,7 +40,9 @@ class Slideshow extends StatelessWidget {
   }
 }
 
-//------------------------ _CrearEstructuraSlideshow -----------------------
+//-------------------------------------------------------------------
+//------------------------ _CrearEstructuraSlideshow ----------------
+//-------------------------------------------------------------------
 
 class _CrearEstructuraSlideshow extends StatelessWidget {
   const _CrearEstructuraSlideshow({
@@ -75,7 +77,9 @@ class _CrearEstructuraSlideshow extends StatelessWidget {
   }
 }
 
+//-------------------------------------------------------------------
 //------------------------ _Slides ----------------------------------
+//-------------------------------------------------------------------
 
 class _Slides extends StatefulWidget {
   final List<Widget> slides;
@@ -111,6 +115,7 @@ class _SlidesState extends State<_Slides> {
   @override
   Widget build(BuildContext context) {
     return PageView(
+      physics: const BouncingScrollPhysics(),
       controller: pageViewController,
       // children: [
       //   _Slide('assets/slide-1.svg'),
@@ -123,7 +128,9 @@ class _SlidesState extends State<_Slides> {
   }
 }
 
+//-------------------------------------------------------------------
 //------------------------ _Slide ----------------------------------
+//-------------------------------------------------------------------
 
 class _Slide extends StatelessWidget {
   final Widget slide;
@@ -141,7 +148,9 @@ class _Slide extends StatelessWidget {
   }
 }
 
+//-------------------------------------------------------------------
 //------------------------ _Dots ----------------------------------
+//-------------------------------------------------------------------
 
 class _Dots extends StatelessWidget {
   final int totalSlides;
@@ -167,7 +176,9 @@ class _Dots extends StatelessWidget {
   }
 }
 
+//-------------------------------------------------------------------
 //------------------------ _Dot ----------------------------------
+//-------------------------------------------------------------------
 
 class _Dot extends StatelessWidget {
   final int index;
@@ -200,7 +211,10 @@ class _Dot extends StatelessWidget {
   }
 }
 
-//------------------------ _SlideshowModel ----------------------------------
+//-------------------------------------------------------------------
+//------------------------ _SlideshowModel --------------------------
+//-------------------------------------------------------------------
+
 class _SlideshowModel with ChangeNotifier {
   double _currentPage = 0;
   Color _colorPrimario = Colors.blue;

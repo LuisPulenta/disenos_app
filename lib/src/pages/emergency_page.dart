@@ -4,7 +4,9 @@ import 'package:disenos_app/src/widgets/headers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+//---------------------------------------------------------------
 //----------------------- ItemBoton -----------------------------
+//---------------------------------------------------------------
 class ItemBoton {
   final IconData icon;
   final String texto;
@@ -14,7 +16,9 @@ class ItemBoton {
   ItemBoton(this.icon, this.texto, this.color1, this.color2);
 }
 
-//----------------------- EmergencyPage -----------------------------
+//---------------------------------------------------------------
+//----------------------- EmergencyPage -------------------------
+//---------------------------------------------------------------
 
 class EmergencyPage extends StatelessWidget {
   const EmergencyPage({Key? key}) : super(key: key);
@@ -93,7 +97,9 @@ class EmergencyPage extends StatelessWidget {
   }
 }
 
+//--------------------------------------------------------------------
 //----------------------- BotonGordoTemp -----------------------------
+//--------------------------------------------------------------------
 
 class BotonGordoTemp extends StatelessWidget {
   const BotonGordoTemp({
@@ -114,7 +120,9 @@ class BotonGordoTemp extends StatelessWidget {
   }
 }
 
+//----------------------------------------------------------------
 //----------------------- PageHeader -----------------------------
+//----------------------------------------------------------------
 
 class PageHeader extends StatelessWidget {
   const PageHeader({Key? key}) : super(key: key);

@@ -26,6 +26,9 @@ class PinterestPage extends StatelessWidget {
   }
 }
 
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 class _PinterestMenuLocation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -49,7 +52,7 @@ class _PinterestMenuLocation extends StatelessWidget {
                 mostrar: mostrar,
                 backgroundColor: appTheme.darkTheme
                     ? appTheme.currentTheme.scaffoldBackgroundColor
-                    : Colors.yellow,
+                    : Color.fromARGB(255, 59, 255, 229),
                 activeColor: appTheme.darkTheme ? accentColor : Colors.teal,
                 inactiveColor: Colors.grey,
                 items: [
@@ -82,6 +85,9 @@ class _PinterestMenuLocation extends StatelessWidget {
   }
 }
 
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 class PinterestGrid extends StatefulWidget {
   const PinterestGrid({Key? key}) : super(key: key);
 
@@ -146,6 +152,9 @@ class _PinterestGridState extends State<PinterestGrid> {
   }
 }
 
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 class _PinterestItem extends StatelessWidget {
   final int index;
   const _PinterestItem({required this.index});
@@ -166,6 +175,9 @@ class _PinterestItem extends StatelessWidget {
   }
 }
 
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 class _MenuModel with ChangeNotifier {
   bool _mostrar = true;
 

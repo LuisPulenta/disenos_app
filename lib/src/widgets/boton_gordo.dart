@@ -62,6 +62,9 @@ class BotonGordo extends StatelessWidget {
   }
 }
 
+//-------------------------------------------------------------------
+//-------------------------------------------------------------------
+//-------------------------------------------------------------------
 class _BotonGordoBackground extends StatelessWidget {
   final IconData icon;
   final Color color1;

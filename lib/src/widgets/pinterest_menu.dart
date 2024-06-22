@@ -64,6 +64,9 @@ class PinterestMenu extends StatelessWidget {
   }
 }
 
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
 class _PinterestMenuBackGround extends StatelessWidget {
   final Widget child;
   const _PinterestMenuBackGround({required this.child});
@@ -90,6 +93,9 @@ class _PinterestMenuBackGround extends StatelessWidget {
   }
 }
 
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
 class PinterestButton {
   final Function onPressed;
   final IconData icon;
@@ -97,6 +103,9 @@ class PinterestButton {
   PinterestButton({required this.onPressed, required this.icon});
 }
 
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
 class _MenuItems extends StatelessWidget {
   final List<PinterestButton> menuItems;
 
@@ -112,6 +121,9 @@ class _MenuItems extends StatelessWidget {
   }
 }
 
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
 class _PinterestMenuButton extends StatelessWidget {
   final int index;
   final PinterestButton item;
@@ -141,16 +153,19 @@ class _PinterestMenuButton extends StatelessWidget {
   }
 }
 
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
 class _MenuModel with ChangeNotifier {
   int _itemSeleccionado = 0;
   Color backgroundColor = Colors.white;
   Color activeColor = Colors.black;
   Color inactiveColor = Colors.blueGrey;
 
-  int get itemSeleccionado => this._itemSeleccionado;
+  int get itemSeleccionado => _itemSeleccionado;
 
   set itemSeleccionado(int index) {
-    this._itemSeleccionado = index;
+    _itemSeleccionado = index;
     notifyListeners();
   }
 }

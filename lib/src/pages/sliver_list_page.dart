@@ -11,6 +11,13 @@ class SliverListPage extends StatelessWidget {
       body: Stack(
         children: [
           _MainScroll(),
+          // const Positioned(
+          //     bottom: -10,
+          //     right: 0,
+          //     child: Icon(
+          //       Icons.abc,
+          //       size: 100,
+          //     )),
           Positioned(bottom: -10, right: 0, child: _BotonNewList()),
         ],
       ),
@@ -18,6 +25,9 @@ class SliverListPage extends StatelessWidget {
   }
 }
 
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 class _BotonNewList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,32 +35,42 @@ class _BotonNewList extends StatelessWidget {
     final appTheme = Provider.of<ThemeChanger>(context);
     final accentColor = appTheme.currentTheme.colorScheme.secondary;
 
-    return ButtonTheme(
-      minWidth: size.width * 0.9,
+    return Container(
+      width: size.width * 0.9,
       height: 100,
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          backgroundColor:
-              appTheme.darkTheme ? accentColor : const Color(0xffed6762),
-          minimumSize: const Size(double.infinity, 40),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),
+      color: Colors.transparent,
+      child: ButtonTheme(
+        minWidth: size.width * 0.9,
+        height: 100,
+        child: ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor:
+                appTheme.darkTheme ? accentColor : const Color(0xffed6762),
+            minimumSize: const Size(double.infinity, 40),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+            ),
           ),
-        ),
-        child: Text('CREATE NEW LIST',
+          child: Text(
+            'CREATE NEW LIST',
             style: TextStyle(
                 color: appTheme.darkTheme
                     ? appTheme.currentTheme.scaffoldBackgroundColor
                     : Colors.white,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                letterSpacing: 3)),
+                letterSpacing: 3),
+          ),
+        ),
       ),
     );
   }
 }
 
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 class _MainScroll extends StatelessWidget {
   final items = [
     const _ListItem('Orange', Color(0xffF08F66)),
@@ -103,6 +123,9 @@ class _MainScroll extends StatelessWidget {
   }
 }
 
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 class _SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
   final double minheight;
   final double maxheight;
@@ -131,6 +154,9 @@ class _SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
   }
 }
 
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 class Titulo extends StatelessWidget {
   const Titulo({Key? key}) : super(key: key);
 
@@ -187,6 +213,9 @@ class Titulo extends StatelessWidget {
   }
 }
 
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 class _ListaTareas extends StatelessWidget {
   final items = [
     const _ListItem('Orange', Color(0xffF08F66)),
@@ -207,6 +236,9 @@ class _ListaTareas extends StatelessWidget {
   }
 }
 
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 class _ListItem extends StatelessWidget {
   final String titulo;
   final Color color;
@@ -216,7 +248,6 @@ class _ListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appTheme = Provider.of<ThemeChanger>(context);
-    final accentColor = appTheme.currentTheme.colorScheme.secondary;
 
     return Container(
       alignment: Alignment.centerLeft,

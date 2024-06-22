@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
 class HeadersCuadrado extends StatelessWidget {
   const HeadersCuadrado({Key? key}) : super(key: key);
 
@@ -15,6 +18,9 @@ class HeadersCuadrado extends StatelessWidget {
   }
 }
 
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
 class HeadersBordesRedondeados extends StatelessWidget {
   const HeadersBordesRedondeados({Key? key}) : super(key: key);
 
@@ -35,6 +41,9 @@ class HeadersBordesRedondeados extends StatelessWidget {
   }
 }
 
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
 class Headers extends StatelessWidget {
   final Color color;
 
@@ -60,6 +69,9 @@ class Headers extends StatelessWidget {
   }
 }
 
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
 class _HeaderDiagonalPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -88,6 +100,9 @@ class _HeaderDiagonalPainter extends CustomPainter {
   }
 }
 
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
 class _HeaderTrianguloPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -114,6 +129,9 @@ class _HeaderTrianguloPainter extends CustomPainter {
   }
 }
 
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
 class _HeaderPicoPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -140,6 +158,9 @@ class _HeaderPicoPainter extends CustomPainter {
   }
 }
 
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
 class _HeaderCurvoPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -164,6 +185,9 @@ class _HeaderCurvoPainter extends CustomPainter {
   }
 }
 
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
 class _HeaderFoodPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -200,6 +224,9 @@ class _HeaderFoodPainter extends CustomPainter {
   }
 }
 
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
 class _HeaderOndasPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -226,6 +253,9 @@ class _HeaderOndasPainter extends CustomPainter {
   }
 }
 
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
 class _HeaderGradientPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -272,6 +302,9 @@ class _HeaderGradientPainter extends CustomPainter {
   }
 }
 
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
 class _HeaderMultiOndasPainter extends CustomPainter {
   final Color color;
 
@@ -323,6 +356,9 @@ class _HeaderMultiOndasPainter extends CustomPainter {
   }
 }
 
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
 class IconHeader extends StatelessWidget {
   final IconData icon;
   final String titulo1;
@@ -383,6 +419,9 @@ class IconHeader extends StatelessWidget {
   }
 }
 
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
 class _IconHeaderBackground extends StatelessWidget {
   final Color color1;
   final Color color2;

@@ -46,10 +46,12 @@ class MiSlideshow extends StatelessWidget {
 
     return Slideshow(
       bulletPrimario: 20,
-      bulletSecundario: 12,
+      bulletSecundario: 10,
       //puntosArriba: true,
-      colorPrimario: appTheme.darkTheme ? accentColor : Colors.purple,
-      colorSecundario: Colors.orange,
+      colorPrimario: appTheme.darkTheme
+          ? accentColor
+          : const Color.fromARGB(255, 200, 12, 68),
+      colorSecundario: const Color.fromARGB(255, 226, 130, 189),
       slides: <Widget>[
         SvgPicture.asset('assets/slide-1.svg'),
         SvgPicture.asset('assets/slide-2.svg'),
