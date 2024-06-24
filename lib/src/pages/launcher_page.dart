@@ -25,6 +25,9 @@ class LauncherPage extends StatelessWidget {
   }
 }
 
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 class _ListaOpciones extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -55,6 +58,9 @@ class _ListaOpciones extends StatelessWidget {
   }
 }
 
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 class _MenuPrincipal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

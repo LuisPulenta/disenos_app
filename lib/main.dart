@@ -9,7 +9,7 @@ void main() => runApp(
       ChangeNotifierProvider(
         create: (_) => LayoutModel(),
         child: ChangeNotifierProvider(
-          create: (_) => ThemeChanger(2),
+          create: (_) => ThemeChanger(0),
           child: const MyApp(),
         ),
       ),

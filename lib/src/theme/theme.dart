@@ -5,9 +5,9 @@ class ThemeChanger with ChangeNotifier {
   bool _customTheme = false;
   ThemeData _currentTheme = ThemeData.light();
 
-  bool get darkTheme => this._darkTheme;
-  bool get customTheme => this._customTheme;
-  ThemeData get currentTheme => this._currentTheme;
+  bool get darkTheme => _darkTheme;
+  bool get customTheme => _customTheme;
+  ThemeData get currentTheme => _currentTheme;
 
   ThemeChanger(int theme) {
     switch (theme) {
@@ -17,7 +17,6 @@ class ThemeChanger with ChangeNotifier {
         _currentTheme = ThemeData.light().copyWith(
             colorScheme:
                 ColorScheme.fromSwatch().copyWith(secondary: Colors.pink));
-        ;
         break;
 
       case 2: //dark
@@ -37,7 +36,6 @@ class ThemeChanger with ChangeNotifier {
         _currentTheme = ThemeData.light().copyWith(
             colorScheme:
                 ColorScheme.fromSwatch().copyWith(secondary: Colors.pink));
-        ;
         break;
     }
   }
@@ -51,7 +49,6 @@ class ThemeChanger with ChangeNotifier {
       _currentTheme = ThemeData.light().copyWith(
           colorScheme:
               ColorScheme.fromSwatch().copyWith(secondary: Colors.pink));
-      ;
     }
     notifyListeners();
   }
@@ -60,19 +57,18 @@ class ThemeChanger with ChangeNotifier {
     _darkTheme = false;
     _customTheme = value;
     if (value) {
-      _currentTheme = ThemeData.dark().copyWith(
-        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.pink),
+      _currentTheme = ThemeData.light().copyWith(
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.green),
         primaryColor: Colors.white,
         scaffoldBackgroundColor: const Color(0xff16202b),
         textTheme: const TextTheme(
-          bodyLarge: TextStyle(color: Colors.yellowAccent),
+          bodyLarge: TextStyle(color: Colors.purple),
         ),
       );
     } else {
       _currentTheme = ThemeData.light().copyWith(
           colorScheme:
               ColorScheme.fromSwatch().copyWith(secondary: Colors.pink));
-      ;
     }
     notifyListeners();
   }
