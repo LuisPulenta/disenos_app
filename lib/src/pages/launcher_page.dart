@@ -14,7 +14,11 @@ class LauncherPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Diseños en Flutter - Teléfono'),
+        iconTheme: IconThemeData(color: Colors.white),
+        title: const Text(
+          'Diseños en Flutter - Teléfono',
+          style: TextStyle(color: Colors.white),
+        ),
         centerTitle: true,
         backgroundColor: appTheme.currentTheme.colorScheme.secondary,
       ),

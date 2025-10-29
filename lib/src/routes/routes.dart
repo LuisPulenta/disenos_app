@@ -7,18 +7,6 @@ import '../retos/cuadrado_animado_page.dart';
 
 final pageRoutes = <_Route>[
   _Route(
-    route: 'slideshow',
-    name: 'Slideshow',
-    screen: const SlideshowPage(),
-    icon: FontAwesomeIcons.slideshare,
-  ),
-  _Route(
-    route: 'emergency',
-    name: 'Emergency',
-    screen: const EmergencyPage(),
-    icon: FontAwesomeIcons.truckMedical,
-  ),
-  _Route(
     route: 'encabezados',
     name: 'Encabezados',
     screen: const HeadersPage(),
@@ -36,12 +24,26 @@ final pageRoutes = <_Route>[
     screen: const CuadradoAnimadoPage(),
     icon: FontAwesomeIcons.peopleCarryBox,
   ),
+
   _Route(
     route: 'barraprogreso',
     name: 'Barra progreso',
     screen: const GraficasCircularesPage(),
     icon: FontAwesomeIcons.circleNotch,
   ),
+  _Route(
+    route: 'slideshow',
+    name: 'Slideshow',
+    screen: const SlideshowPage(),
+    icon: FontAwesomeIcons.slideshare,
+  ),
+  _Route(
+    route: 'emergency',
+    name: 'Emergency',
+    screen: const EmergencyPage(),
+    icon: FontAwesomeIcons.truckMedical,
+  ),
+
   _Route(
     route: 'pinterest',
     name: 'Pinterest',

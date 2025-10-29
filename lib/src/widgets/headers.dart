@@ -46,13 +46,15 @@ class Headers extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         child: CustomPaint(
-          painter: _HeaderFoodPainter(),
-          //_HeaderGradientPainter(),
-          //_HeaderOndasPainter(),
-          //_HeaderCurvoPainter(),
-          //_HeaderPicoPainter(),
-          //_HeaderTrianguloPainter(),
-          //_HeaderDiagonalPainter(),
+          painter:
+              //_HeaderDiagonalPainter(),
+              //_HeaderTrianguloPainter(),
+              //_HeaderPicoPainter(),
+              //_HeaderCurvoPainter(),
+              //_HeaderOndasPainter(),
+              //_HeaderGradientPainter(),
+              _HeaderFoodPainter(),
+
           //_HeaderMultiOndasPainter(color),
         ),
       ),

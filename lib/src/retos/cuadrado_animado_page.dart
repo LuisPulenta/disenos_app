@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//----------------------------------------------------------------
 class CuadradoAnimadoPage extends StatelessWidget {
   const CuadradoAnimadoPage({super.key});
 
@@ -12,6 +13,7 @@ class CuadradoAnimadoPage extends StatelessWidget {
   }
 }
 
+//----------------------------------------------------------------
 class CuadradoAnimado extends StatefulWidget {
   const CuadradoAnimado({super.key});
 
@@ -28,6 +30,7 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado>
   late Animation<double> moverIzquierda;
   late Animation<double> moverAbajo;
 
+  //----------------------- initState ------------------------
   @override
   void initState() {
     controller = AnimationController(
@@ -80,12 +83,14 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado>
     super.initState();
   }
 
+  //----------------------- dispose ------------------------
   @override
   void dispose() {
     controller.dispose();
     super.dispose();
   }
 
+  //----------------------- Pantalla ------------------------
   @override
   Widget build(BuildContext context) {
     //Play
@@ -107,6 +112,7 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado>
   }
 }
 
+//----------------------- _Rectangulo ------------------------
 class _Rectangulo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

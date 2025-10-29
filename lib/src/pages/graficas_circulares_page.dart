@@ -15,7 +15,7 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Graficas Circulares'),
+        title: const Text('Gráficas Circulares'),
         centerTitle: true,
       ),
       body: Column(

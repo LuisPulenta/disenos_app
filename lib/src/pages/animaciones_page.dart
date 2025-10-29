@@ -26,25 +26,15 @@ class CuadradoAnimado extends StatefulWidget {
 
 class _CuadradoAnimadoState extends State<CuadradoAnimado>
     with SingleTickerProviderStateMixin {
-  //-----------------------------------------------------------------
   //------------------------- Variables -----------------------------
-  //-----------------------------------------------------------------
-
   late AnimationController controller;
-
   late Animation<double> rotacion;
-
   late Animation<double> opacidad;
-
   late Animation<double> moverDerecha;
-
   late Animation<double> agrandar;
-
   late Animation<double> opacidadOut;
 
-  //-----------------------------------------------------------------
   //------------------------- initState -----------------------------
-  //-----------------------------------------------------------------
   @override
   void initState() {
     //--- controller ---
@@ -99,15 +89,14 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado>
     super.initState();
   }
 
+  //------------------------- dispose -----------------------------
   @override
   void dispose() {
     controller.dispose();
     super.dispose();
   }
 
-  //-----------------------------------------------------------------
   //------------------------- Pantalla ------------------------------
-  //-----------------------------------------------------------------
   @override
   Widget build(BuildContext context) {
     //Play
