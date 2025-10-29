@@ -15,8 +15,10 @@ class ThemeChanger with ChangeNotifier {
         _darkTheme = false;
         _customTheme = false;
         _currentTheme = ThemeData.light().copyWith(
-            colorScheme:
-                ColorScheme.fromSwatch().copyWith(secondary: Colors.pink));
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            secondary: Colors.pink,
+          ),
+        );
         break;
 
       case 2: //dark
@@ -34,8 +36,10 @@ class ThemeChanger with ChangeNotifier {
         _darkTheme = false;
         _customTheme = false;
         _currentTheme = ThemeData.light().copyWith(
-            colorScheme:
-                ColorScheme.fromSwatch().copyWith(secondary: Colors.pink));
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            secondary: Colors.pink,
+          ),
+        );
         break;
     }
   }
@@ -47,8 +51,8 @@ class ThemeChanger with ChangeNotifier {
       _currentTheme = ThemeData.dark();
     } else {
       _currentTheme = ThemeData.light().copyWith(
-          colorScheme:
-              ColorScheme.fromSwatch().copyWith(secondary: Colors.pink));
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.pink),
+      );
     }
     notifyListeners();
   }
@@ -61,14 +65,12 @@ class ThemeChanger with ChangeNotifier {
         colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.green),
         primaryColor: Colors.white,
         scaffoldBackgroundColor: const Color(0xff16202b),
-        textTheme: const TextTheme(
-          bodyLarge: TextStyle(color: Colors.purple),
-        ),
+        textTheme: const TextTheme(bodyLarge: TextStyle(color: Colors.purple)),
       );
     } else {
       _currentTheme = ThemeData.light().copyWith(
-          colorScheme:
-              ColorScheme.fromSwatch().copyWith(secondary: Colors.pink));
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.pink),
+      );
     }
     notifyListeners();
   }

@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ColoresPage extends StatelessWidget {
-  const ColoresPage({Key? key}) : super(key: key);
+  const ColoresPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Colores'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('Colores'), centerTitle: true),
       body: Center(
         child: Column(
           children: [
@@ -38,7 +35,7 @@ class ColoresPage extends StatelessWidget {
                     width: 50,
                     color: Colors.yellow,
                   ),
-                )
+                ),
               ],
             ),
             Row(
@@ -66,7 +63,7 @@ class ColoresPage extends StatelessWidget {
                     width: 50,
                     color: Colors.pink,
                   ),
-                )
+                ),
               ],
             ),
             Row(
@@ -94,7 +91,7 @@ class ColoresPage extends StatelessWidget {
                     width: 50,
                     color: Colors.teal,
                   ),
-                )
+                ),
               ],
             ),
             Row(
@@ -122,7 +119,7 @@ class ColoresPage extends StatelessWidget {
                     width: 50,
                     color: Colors.yellowAccent,
                   ),
-                )
+                ),
               ],
             ),
             Row(
@@ -178,9 +175,9 @@ class ColoresPage extends StatelessWidget {
                     width: 50,
                     color: Colors.tealAccent,
                   ),
-                )
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
 
 class CuadradoAnimadoPage extends StatelessWidget {
-  const CuadradoAnimadoPage({Key? key}) : super(key: key);
+  const CuadradoAnimadoPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       //appBar: AppBar(title: Text('CuadradoAnimadoPage')),
-      body: Center(
-        child: CuadradoAnimado(),
-      ),
+      body: Center(child: CuadradoAnimado()),
     );
   }
 }
 
 class CuadradoAnimado extends StatefulWidget {
-  const CuadradoAnimado({
-    Key? key,
-  }) : super(key: key);
+  const CuadradoAnimado({super.key});
 
   @override
   State<CuadradoAnimado> createState() => _CuadradoAnimadoState();
@@ -39,24 +35,36 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado>
       duration: const Duration(milliseconds: 6000),
     );
 
-    moverDerecha = Tween(begin: 0.0, end: 100.0).animate(CurvedAnimation(
+    moverDerecha = Tween(begin: 0.0, end: 100.0).animate(
+      CurvedAnimation(
         parent: controller,
-        curve: const Interval(0, 0.25, curve: Curves.bounceOut)));
+        curve: const Interval(0, 0.25, curve: Curves.bounceOut),
+      ),
+    );
     super.initState();
 
-    moverArriba = Tween(begin: 0.0, end: -100.0).animate(CurvedAnimation(
+    moverArriba = Tween(begin: 0.0, end: -100.0).animate(
+      CurvedAnimation(
         parent: controller,
-        curve: const Interval(0.25, 0.5, curve: Curves.bounceOut)));
+        curve: const Interval(0.25, 0.5, curve: Curves.bounceOut),
+      ),
+    );
     super.initState();
 
-    moverIzquierda = Tween(begin: 0.0, end: -100.0).animate(CurvedAnimation(
+    moverIzquierda = Tween(begin: 0.0, end: -100.0).animate(
+      CurvedAnimation(
         parent: controller,
-        curve: const Interval(0.5, 0.75, curve: Curves.bounceOut)));
+        curve: const Interval(0.5, 0.75, curve: Curves.bounceOut),
+      ),
+    );
     super.initState();
 
-    moverAbajo = Tween(begin: 0.0, end: 100.0).animate(CurvedAnimation(
+    moverAbajo = Tween(begin: 0.0, end: 100.0).animate(
+      CurvedAnimation(
         parent: controller,
-        curve: const Interval(0.75, 1.0, curve: Curves.bounceOut)));
+        curve: const Interval(0.75, 1.0, curve: Curves.bounceOut),
+      ),
+    );
 
     controller.addListener(() {
       if (controller.status == AnimationStatus.completed) {
@@ -88,8 +96,10 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado>
       child: _Rectangulo(),
       builder: (BuildContext context, Widget? childRectangulo) {
         return Transform.translate(
-          offset: Offset(moverDerecha.value + moverIzquierda.value,
-              moverArriba.value + moverAbajo.value),
+          offset: Offset(
+            moverDerecha.value + moverIzquierda.value,
+            moverArriba.value + moverAbajo.value,
+          ),
           child: childRectangulo,
         );
       },

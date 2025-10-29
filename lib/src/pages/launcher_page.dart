@@ -1,11 +1,12 @@
-import 'package:disenos_app/src/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:disenos_app/src/routes/routes.dart';
 import 'package:provider/provider.dart';
 
+import '../routes/routes.dart';
+import '../theme/theme.dart';
+
 class LauncherPage extends StatelessWidget {
-  const LauncherPage({Key? key}) : super(key: key);
+  const LauncherPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +18,7 @@ class LauncherPage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: appTheme.currentTheme.colorScheme.secondary,
       ),
-      body: Center(
-        child: _ListaOpciones(),
-      ),
+      body: Center(child: _ListaOpciones()),
       drawer: _MenuPrincipal(),
     );
   }
@@ -36,9 +35,8 @@ class _ListaOpciones extends StatelessWidget {
     return ListView.separated(
       physics: const BouncingScrollPhysics(),
       itemCount: pageRoutes.length,
-      separatorBuilder: (context, i) => Divider(
-        color: appTheme.primaryColorLight,
-      ),
+      separatorBuilder: (context, i) =>
+          Divider(color: appTheme.primaryColorLight),
       itemBuilder: (context, i) => ListTile(
         leading: FaIcon(
           pageRoutes[i].icon,
@@ -50,8 +48,10 @@ class _ListaOpciones extends StatelessWidget {
           color: appTheme.colorScheme.secondary,
         ),
         onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => pageRoutes[i].screen));
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => pageRoutes[i].screen),
+          );
         },
       ),
     );
@@ -78,21 +78,13 @@ class _MenuPrincipal extends StatelessWidget {
               height: 200,
               child: CircleAvatar(
                 backgroundColor: accentColor,
-                child: const Text(
-                  'LN',
-                  style: TextStyle(fontSize: 50),
-                ),
+                child: const Text('LN', style: TextStyle(fontSize: 50)),
               ),
             ),
           ),
-          Expanded(
-            child: _ListaOpciones(),
-          ),
+          Expanded(child: _ListaOpciones()),
           ListTile(
-            leading: Icon(
-              Icons.lightbulb_outline,
-              color: accentColor,
-            ),
+            leading: Icon(Icons.lightbulb_outline, color: accentColor),
             title: const Text('Dark Mode'),
             trailing: Switch.adaptive(
               value: appTheme.darkTheme,
@@ -103,10 +95,7 @@ class _MenuPrincipal extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(
-              Icons.add_to_home_screen,
-              color: accentColor,
-            ),
+            leading: Icon(Icons.add_to_home_screen, color: accentColor),
             title: const Text('Custom Theme'),
             trailing: Switch.adaptive(
               value: appTheme.customTheme,

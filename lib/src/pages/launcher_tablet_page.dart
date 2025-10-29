@@ -1,12 +1,13 @@
-import 'package:disenos_app/models/layout_model.dart';
-import 'package:disenos_app/src/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:disenos_app/src/routes/routes.dart';
 import 'package:provider/provider.dart';
 
+import '../../models/layout_model.dart';
+import '../routes/routes.dart';
+import '../theme/theme.dart';
+
 class LauncherTabletPage extends StatelessWidget {
-  const LauncherTabletPage({Key? key}) : super(key: key);
+  const LauncherTabletPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +35,7 @@ class LauncherTabletPage extends StatelessWidget {
                 ? Colors.grey
                 : appTheme.currentTheme.colorScheme.secondary,
           ),
-          Expanded(
-            child: layoutModel.currentPage,
-          )
+          Expanded(child: layoutModel.currentPage),
         ],
       ),
       drawer: _MenuPrincipal(),
@@ -55,9 +54,8 @@ class _ListaOpciones extends StatelessWidget {
     return ListView.separated(
       physics: const BouncingScrollPhysics(),
       itemCount: pageRoutes.length,
-      separatorBuilder: (context, i) => Divider(
-        color: appTheme.primaryColorLight,
-      ),
+      separatorBuilder: (context, i) =>
+          Divider(color: appTheme.primaryColorLight),
       itemBuilder: (context, i) => ListTile(
         leading: FaIcon(
           pageRoutes[i].icon,
@@ -99,21 +97,13 @@ class _MenuPrincipal extends StatelessWidget {
               height: 200,
               child: CircleAvatar(
                 backgroundColor: accentColor,
-                child: const Text(
-                  'LN',
-                  style: TextStyle(fontSize: 50),
-                ),
+                child: const Text('LN', style: TextStyle(fontSize: 50)),
               ),
             ),
           ),
-          Expanded(
-            child: _ListaOpciones(),
-          ),
+          Expanded(child: _ListaOpciones()),
           ListTile(
-            leading: Icon(
-              Icons.lightbulb_outline,
-              color: accentColor,
-            ),
+            leading: Icon(Icons.lightbulb_outline, color: accentColor),
             title: const Text('Dark Mode'),
             trailing: Switch.adaptive(
               value: appTheme.darkTheme,
@@ -124,10 +114,7 @@ class _MenuPrincipal extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(
-              Icons.add_to_home_screen,
-              color: accentColor,
-            ),
+            leading: Icon(Icons.add_to_home_screen, color: accentColor),
             title: const Text('Custom Theme'),
             trailing: Switch.adaptive(
               value: appTheme.customTheme,

@@ -1,11 +1,12 @@
-import 'package:disenos_app/src/theme/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:disenos_app/src/widgets/slideshow.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
+import '../theme/theme.dart';
+import '../widgets/slideshow.dart';
+
 class SlideshowPage extends StatelessWidget {
-  const SlideshowPage({Key? key}) : super(key: key);
+  const SlideshowPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,21 +24,13 @@ class SlideshowPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: const Text('SlideshowPage')),
-      body: isLarge
-          ? Column(
-              children: children,
-            )
-          : Row(
-              children: children,
-            ),
+      body: isLarge ? Column(children: children) : Row(children: children),
     );
   }
 }
 
 class MiSlideshow extends StatelessWidget {
-  const MiSlideshow({
-    Key? key,
-  }) : super(key: key);
+  const MiSlideshow({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,11 +58,7 @@ class MiSlideshow extends StatelessWidget {
         Scaffold(
           appBar: AppBar(title: const Text('Hola')),
           body: Center(
-            child: Container(
-              height: 50,
-              width: 50,
-              color: Colors.red,
-            ),
+            child: Container(height: 50, width: 50, color: Colors.red),
           ),
         ),
         const Text('Hola Mundo'),

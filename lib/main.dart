@@ -1,19 +1,20 @@
-import 'package:disenos_app/models/layout_model.dart';
-import 'package:disenos_app/src/pages/launcher_page.dart';
-import 'package:disenos_app/src/pages/launcher_tablet_page.dart';
-import 'package:disenos_app/src/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'models/layout_model.dart';
+import 'src/pages/launcher_page.dart';
+import 'src/pages/launcher_tablet_page.dart';
+import 'src/theme/theme.dart';
+
 void main() => runApp(
-      ChangeNotifierProvider(
-        create: (_) => LayoutModel(),
-        child: ChangeNotifierProvider(
-          create: (_) => ThemeChanger(0),
-          child: const MyApp(),
-        ),
-      ),
-    );
+  ChangeNotifierProvider(
+    create: (_) => LayoutModel(),
+    child: ChangeNotifierProvider(
+      create: (_) => ThemeChanger(0),
+      child: const MyApp(),
+    ),
+  ),
+);
 
 // void main() => runApp(
 //       MultiProvider(
@@ -26,7 +27,7 @@ void main() => runApp(
 //     );
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

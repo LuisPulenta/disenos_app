@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:disenos_app/src/pages/pages.dart';
+
+import '../src/pages/pages.dart';
 
 class LayoutModel with ChangeNotifier {
   Widget _currentPage = const SlideshowPage();

@@ -9,32 +9,40 @@ class Slideshow extends StatelessWidget {
   final double bulletPrimario;
   final double bulletSecundario;
 
-  const Slideshow(
-      {Key? key,
-      required this.slides,
-      this.puntosArriba = false,
-      this.colorPrimario = Colors.blue,
-      this.colorSecundario = Colors.grey,
-      this.bulletPrimario = 12.0,
-      this.bulletSecundario = 12.0})
-      : super(key: key);
+  const Slideshow({
+    super.key,
+    required this.slides,
+    this.puntosArriba = false,
+    this.colorPrimario = Colors.blue,
+    this.colorSecundario = Colors.grey,
+    this.bulletPrimario = 12.0,
+    this.bulletSecundario = 12.0,
+  });
 
-//------------------------ Pantalla ----------------------------------
+  //------------------------ Pantalla ----------------------------------
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => _SlideshowModel(),
       child: SafeArea(
-        child: Center(child: Builder(builder: (BuildContext context) {
-          Provider.of<_SlideshowModel>(context).colorPrimario = colorPrimario;
-          Provider.of<_SlideshowModel>(context).colorSecundario =
-              colorSecundario;
-          Provider.of<_SlideshowModel>(context).bulletPrimario = bulletPrimario;
-          Provider.of<_SlideshowModel>(context).bulletSecundario =
-              bulletSecundario;
-          return _CrearEstructuraSlideshow(
-              puntosArriba: puntosArriba, slides: slides);
-        })),
+        child: Center(
+          child: Builder(
+            builder: (BuildContext context) {
+              Provider.of<_SlideshowModel>(context).colorPrimario =
+                  colorPrimario;
+              Provider.of<_SlideshowModel>(context).colorSecundario =
+                  colorSecundario;
+              Provider.of<_SlideshowModel>(context).bulletPrimario =
+                  bulletPrimario;
+              Provider.of<_SlideshowModel>(context).bulletSecundario =
+                  bulletSecundario;
+              return _CrearEstructuraSlideshow(
+                puntosArriba: puntosArriba,
+                slides: slides,
+              );
+            },
+          ),
+        ),
       ),
     );
   }
@@ -46,10 +54,10 @@ class Slideshow extends StatelessWidget {
 
 class _CrearEstructuraSlideshow extends StatelessWidget {
   const _CrearEstructuraSlideshow({
-    Key? key,
+    super.key,
     required this.puntosArriba,
     required this.slides,
-  }) : super(key: key);
+  });
 
   final bool puntosArriba;
   final List<Widget> slides;
@@ -58,20 +66,9 @@ class _CrearEstructuraSlideshow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        puntosArriba
-            ? _Dots(
-                totalSlides: slides.length,
-              )
-            : Container(),
-        Expanded(
-            child: _Slides(
-          slides: slides,
-        )),
-        !puntosArriba
-            ? _Dots(
-                totalSlides: slides.length,
-              )
-            : Container(),
+        puntosArriba ? _Dots(totalSlides: slides.length) : Container(),
+        Expanded(child: _Slides(slides: slides)),
+        !puntosArriba ? _Dots(totalSlides: slides.length) : Container(),
       ],
     );
   }
@@ -91,11 +88,11 @@ class _Slides extends StatefulWidget {
 }
 
 class _SlidesState extends State<_Slides> {
-//------------------------ Variables ----------------------------------
+  //------------------------ Variables ----------------------------------
 
   final pageViewController = PageController();
 
-//------------------------ initState ----------------------------------
+  //------------------------ initState ----------------------------------
   @override
   void initState() {
     pageViewController.addListener(() {
@@ -111,18 +108,18 @@ class _SlidesState extends State<_Slides> {
     super.dispose();
   }
 
-//------------------------ Pantalla ----------------------------------
+  //------------------------ Pantalla ----------------------------------
   @override
   Widget build(BuildContext context) {
     return PageView(
       physics: const BouncingScrollPhysics(),
       controller: pageViewController,
+
       // children: [
       //   _Slide('assets/slide-1.svg'),
       //   _Slide('assets/slide-2.svg'),
       //   _Slide('assets/slide-3.svg'),
       // ],
-
       children: widget.slides.map((slide) => _Slide(slide)).toList(),
     );
   }
@@ -134,17 +131,16 @@ class _SlidesState extends State<_Slides> {
 
 class _Slide extends StatelessWidget {
   final Widget slide;
-  const _Slide(
-    this.slide,
-  );
+  const _Slide(this.slide);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: double.infinity,
-        height: double.infinity,
-        padding: const EdgeInsets.all(30),
-        child: slide);
+      width: double.infinity,
+      height: double.infinity,
+      padding: const EdgeInsets.all(30),
+      child: slide,
+    );
   }
 }
 
@@ -154,23 +150,16 @@ class _Slide extends StatelessWidget {
 
 class _Dots extends StatelessWidget {
   final int totalSlides;
-  const _Dots({
-    required this.totalSlides,
-  });
+  const _Dots({required this.totalSlides});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: 70,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: List.generate(
-          totalSlides,
-          (index) => _Dot(
-            index: index,
-          ),
-        ),
+        children: List.generate(totalSlides, (index) => _Dot(index: index)),
       ),
     );
   }
@@ -203,10 +192,7 @@ class _Dot extends StatelessWidget {
       height: tamano,
       margin: const EdgeInsets.symmetric(horizontal: 5),
       duration: const Duration(milliseconds: 200),
-      decoration: BoxDecoration(
-        color: color,
-        shape: BoxShape.circle,
-      ),
+      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
     );
   }
 }

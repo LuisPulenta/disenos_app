@@ -1,8 +1,9 @@
-import 'package:disenos_app/src/widgets/radial_progress.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/radial_progress.dart';
+
 class GraficasCircularesPage extends StatefulWidget {
-  const GraficasCircularesPage({Key? key}) : super(key: key);
+  const GraficasCircularesPage({super.key});
 
   @override
   State<GraficasCircularesPage> createState() => _GraficasCircularesPageState();
@@ -68,15 +69,16 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.refresh),
-          onPressed: () {
-            setState(() {
-              porcentaje += 10;
-              if (porcentaje > 100) {
-                porcentaje = 0;
-              }
-            });
-          }),
+        child: const Icon(Icons.refresh),
+        onPressed: () {
+          setState(() {
+            porcentaje += 10;
+            if (porcentaje > 100) {
+              porcentaje = 0;
+            }
+          });
+        },
+      ),
     );
   }
 }
@@ -84,12 +86,12 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
 class CustomRadialProgress extends StatelessWidget {
   final Color colorPrimario;
   final Color colorSecundario;
-  const CustomRadialProgress(
-      {Key? key,
-      required this.porcentaje,
-      required this.colorPrimario,
-      required this.colorSecundario})
-      : super(key: key);
+  const CustomRadialProgress({
+    super.key,
+    required this.porcentaje,
+    required this.colorPrimario,
+    required this.colorSecundario,
+  });
 
   final double porcentaje;
 

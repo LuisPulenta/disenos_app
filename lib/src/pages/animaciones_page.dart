@@ -1,16 +1,15 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+import 'package:flutter/material.dart';
+
 class AnimacionesPage extends StatelessWidget {
-  const AnimacionesPage({Key? key}) : super(key: key);
+  const AnimacionesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       //appBar: AppBar(title: Text('AnimacionesPage')),
-      body: Center(
-        child: CuadradoAnimado(),
-      ),
+      body: Center(child: CuadradoAnimado()),
     );
   }
 }
@@ -19,7 +18,7 @@ class AnimacionesPage extends StatelessWidget {
 //************************ CuadradoAnimado ************************
 //*****************************************************************
 class CuadradoAnimado extends StatefulWidget {
-  const CuadradoAnimado({Key? key}) : super(key: key);
+  const CuadradoAnimado({super.key});
 
   @override
   State<CuadradoAnimado> createState() => _CuadradoAnimadoState();
@@ -27,9 +26,9 @@ class CuadradoAnimado extends StatefulWidget {
 
 class _CuadradoAnimadoState extends State<CuadradoAnimado>
     with SingleTickerProviderStateMixin {
-//-----------------------------------------------------------------
-//------------------------- Variables -----------------------------
-//-----------------------------------------------------------------
+  //-----------------------------------------------------------------
+  //------------------------- Variables -----------------------------
+  //-----------------------------------------------------------------
 
   late AnimationController controller;
 
@@ -43,9 +42,9 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado>
 
   late Animation<double> opacidadOut;
 
-//-----------------------------------------------------------------
-//------------------------- initState -----------------------------
-//-----------------------------------------------------------------
+  //-----------------------------------------------------------------
+  //------------------------- initState -----------------------------
+  //-----------------------------------------------------------------
   @override
   void initState() {
     //--- controller ---
@@ -55,8 +54,10 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado>
     );
 
     //--- rotacion ---
-    rotacion = Tween(begin: 0.0, end: 2.0 * math.pi).animate(
-        CurvedAnimation(parent: controller, curve: Curves.elasticInOut));
+    rotacion = Tween(
+      begin: 0.0,
+      end: 2.0 * math.pi,
+    ).animate(CurvedAnimation(parent: controller, curve: Curves.elasticInOut));
 
     //--- opacidad ---
     opacidad = Tween(begin: 0.1, end: 1.0).animate(
@@ -67,12 +68,16 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado>
     );
 
     //--- moverDerecha ---
-    moverDerecha = Tween(begin: 0.0, end: 200.0)
-        .animate(CurvedAnimation(parent: controller, curve: Curves.easeOut));
+    moverDerecha = Tween(
+      begin: 0.0,
+      end: 200.0,
+    ).animate(CurvedAnimation(parent: controller, curve: Curves.easeOut));
 
     //--- agrandar ---
-    agrandar = Tween(begin: 0.0, end: 4.0)
-        .animate(CurvedAnimation(parent: controller, curve: Curves.easeOut));
+    agrandar = Tween(
+      begin: 0.0,
+      end: 4.0,
+    ).animate(CurvedAnimation(parent: controller, curve: Curves.easeOut));
 
     //--- opacidadOut ---
     opacidadOut = Tween(begin: 0.0, end: 1.0).animate(
@@ -100,9 +105,9 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado>
     super.dispose();
   }
 
-//-----------------------------------------------------------------
-//------------------------- Pantalla ------------------------------
-//-----------------------------------------------------------------
+  //-----------------------------------------------------------------
+  //------------------------- Pantalla ------------------------------
+  //-----------------------------------------------------------------
   @override
   Widget build(BuildContext context) {
     //Play
@@ -122,7 +127,9 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado>
             child: Opacity(
               opacity: opacidad.value - opacidadOut.value,
               child: Transform.scale(
-                  scale: agrandar.value, child: childRectangulo),
+                scale: agrandar.value,
+                child: childRectangulo,
+              ),
             ),
           ),
         );

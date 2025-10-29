@@ -32,14 +32,14 @@ class PinterestMenu extends StatelessWidget {
   //       }),
   // ];
 
-  const PinterestMenu(
-      {Key? key,
-      this.mostrar = true,
-      this.backgroundColor = Colors.white,
-      this.activeColor = Colors.black,
-      this.inactiveColor = Colors.blueGrey,
-      required this.items})
-      : super(key: key);
+  const PinterestMenu({
+    super.key,
+    this.mostrar = true,
+    this.backgroundColor = Colors.white,
+    this.activeColor = Colors.black,
+    this.inactiveColor = Colors.blueGrey,
+    required this.items,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -54,9 +54,7 @@ class PinterestMenu extends StatelessWidget {
             Provider.of<_MenuModel>(context).activeColor = activeColor;
             Provider.of<_MenuModel>(context).inactiveColor = inactiveColor;
 
-            return _PinterestMenuBackGround(
-              child: _MenuItems(items),
-            );
+            return _PinterestMenuBackGround(child: _MenuItems(items));
           },
         ),
       ),
@@ -78,17 +76,16 @@ class _PinterestMenuBackGround extends StatelessWidget {
     Color inactiveColor = Provider.of<_MenuModel>(context).inactiveColor;
 
     return Container(
-      child: child,
       width: 250,
       height: 60,
       decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: const BorderRadius.all(
-            Radius.circular(100),
-          ),
-          boxShadow: const <BoxShadow>[
-            BoxShadow(color: Colors.black38, blurRadius: 10, spreadRadius: -5),
-          ]),
+        color: backgroundColor,
+        borderRadius: const BorderRadius.all(Radius.circular(100)),
+        boxShadow: const <BoxShadow>[
+          BoxShadow(color: Colors.black38, blurRadius: 10, spreadRadius: -5),
+        ],
+      ),
+      child: child,
     );
   }
 }
@@ -115,8 +112,10 @@ class _MenuItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: List.generate(menuItems.length,
-          (index) => _PinterestMenuButton(index, menuItems[index])),
+      children: List.generate(
+        menuItems.length,
+        (index) => _PinterestMenuButton(index, menuItems[index]),
+      ),
     );
   }
 }

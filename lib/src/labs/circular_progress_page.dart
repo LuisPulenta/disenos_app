@@ -1,9 +1,10 @@
 import 'dart:math';
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class CircularProgressPage extends StatefulWidget {
-  const CircularProgressPage({Key? key}) : super(key: key);
+  const CircularProgressPage({super.key});
 
   @override
   State<CircularProgressPage> createState() => _CircularProgressPageState();
@@ -47,13 +48,10 @@ class _CircularProgressPageState extends State<CircularProgressPage>
           padding: const EdgeInsets.all(5),
           height: 300,
           width: 300,
-          child: CustomPaint(
-            painter: _MiRadialProgress(porcentaje),
-          ),
+          child: CustomPaint(painter: _MiRadialProgress(porcentaje)),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.refresh),
         onPressed: () {
           porcentaje = nuevoPorcentaje;
           nuevoPorcentaje += 10;
@@ -65,6 +63,7 @@ class _CircularProgressPageState extends State<CircularProgressPage>
           setState(() {});
         },
         backgroundColor: Colors.pink,
+        child: const Icon(Icons.refresh),
       ),
     );
   }
@@ -97,8 +96,13 @@ class _MiRadialProgress extends CustomPainter {
     //Parte que se deberá ir llenando
     double arcAngle = 2 * pi * (porcentaje / 100);
 
-    canvas.drawArc(Rect.fromCircle(center: center, radius: radio), -pi / 2,
-        arcAngle, false, paintArco);
+    canvas.drawArc(
+      Rect.fromCircle(center: center, radius: radio),
+      -pi / 2,
+      arcAngle,
+      false,
+      paintArco,
+    );
   }
 
   @override
