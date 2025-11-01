@@ -19,15 +19,13 @@ class SliverListPage extends StatelessWidget {
           //       Icons.abc,
           //       size: 100,
           //     )),
-          Positioned(bottom: -10, right: 0, child: _BotonNewList()),
+          Positioned(bottom: -10, right: -10, child: _BotonNewList()),
         ],
       ),
     );
   }
 }
 
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 class _BotonNewList extends StatelessWidget {
   @override
@@ -51,7 +49,7 @@ class _BotonNewList extends StatelessWidget {
                 : const Color(0xffed6762),
             minimumSize: const Size(double.infinity, 40),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(50)),
             ),
           ),
           child: Text(
@@ -71,8 +69,6 @@ class _BotonNewList extends StatelessWidget {
   }
 }
 
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 class _MainScroll extends StatelessWidget {
   final items = [
@@ -104,8 +100,8 @@ class _MainScroll extends StatelessWidget {
         SliverPersistentHeader(
           floating: true,
           delegate: _SliverCustomHeaderDelegate(
-            minheight: 220,
-            maxheight: 250,
+            minheight: 210,
+            maxheight: 240,
             child: Container(
               color: appTheme.currentTheme.scaffoldBackgroundColor,
               alignment: Alignment.centerLeft,
@@ -124,8 +120,6 @@ class _MainScroll extends StatelessWidget {
   }
 }
 
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 class _SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
   final double minheight;
@@ -162,8 +156,6 @@ class _SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
 }
 
 //-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
 class Titulo extends StatelessWidget {
   const Titulo({super.key});
 
@@ -187,9 +179,8 @@ class Titulo extends StatelessWidget {
         ),
         Stack(
           children: [
-            const SizedBox(height: 30),
             Positioned(
-              bottom: 28,
+              bottom: 8,
               left: 32,
               child: Container(
                 width: 110,
@@ -200,7 +191,7 @@ class Titulo extends StatelessWidget {
               ),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 00),
               child: const Text(
                 'List',
                 style: TextStyle(
@@ -217,32 +208,28 @@ class Titulo extends StatelessWidget {
   }
 }
 
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-class _ListaTareas extends StatelessWidget {
-  final items = [
-    const _ListItem('Orange', Color(0xffF08F66)),
-    const _ListItem('Family', Color(0xffF2A38A)),
-    const _ListItem('Subscriptions', Color(0xffF7CDD5)),
-    const _ListItem('Books', Color(0xffFCEBAF)),
-    const _ListItem('Orange', Color(0xffF08F66)),
-    const _ListItem('Family', Color(0xffF2A38A)),
-    const _ListItem('Subscriptions', Color(0xffF7CDD5)),
-    const _ListItem('Books', Color(0xffFCEBAF)),
-  ];
+// //-----------------------------------------------------------------------------
+// class _ListaTareas extends StatelessWidget {
+//   final items = [
+//     const _ListItem('Orange', Color(0xffF08F66)),
+//     const _ListItem('Family', Color(0xffF2A38A)),
+//     const _ListItem('Subscriptions', Color(0xffF7CDD5)),
+//     const _ListItem('Books', Color(0xffFCEBAF)),
+//     const _ListItem('Orange', Color(0xffF08F66)),
+//     const _ListItem('Family', Color(0xffF2A38A)),
+//     const _ListItem('Subscriptions', Color(0xffF7CDD5)),
+//     const _ListItem('Books', Color(0xffFCEBAF)),
+//   ];
 
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: items.length,
-      itemBuilder: (BuildContext context, int index) => items[index],
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListView.builder(
+//       itemCount: items.length,
+//       itemBuilder: (BuildContext context, int index) => items[index],
+//     );
+//   }
+// }
 
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 class _ListItem extends StatelessWidget {
   final String titulo;

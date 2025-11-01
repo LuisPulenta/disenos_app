@@ -83,6 +83,7 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
   }
 }
 
+//--------------------------------------------------------------------------
 class CustomRadialProgress extends StatelessWidget {
   final Color colorPrimario;
   final Color colorSecundario;

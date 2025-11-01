@@ -27,6 +27,7 @@ class _RadialProgressState extends State<RadialProgress>
   late AnimationController controller;
   double porcentajeAnterior = 0.0;
 
+  //------------------ initState ----------------------
   @override
   void initState() {
     porcentajeAnterior = widget.porcentaje;
@@ -44,12 +45,14 @@ class _RadialProgressState extends State<RadialProgress>
     super.initState();
   }
 
+  //------------------ dispose ----------------------
   @override
   void dispose() {
     controller.dispose();
     super.dispose();
   }
 
+  //------------------ Pantalla ----------------------
   @override
   Widget build(BuildContext context) {
     controller.forward(from: 0.0);
@@ -79,6 +82,7 @@ class _RadialProgressState extends State<RadialProgress>
   }
 }
 
+//-----------------------------------------------------------------
 class _MiRadialProgress extends CustomPainter {
   final double porcentaje;
   final Color colorPrimario;

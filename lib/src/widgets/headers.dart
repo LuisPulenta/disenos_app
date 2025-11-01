@@ -432,8 +432,8 @@ class IconHeader extends StatelessWidget {
     required this.icon,
     required this.titulo1,
     required this.titulo2,
-    this.color1 = Colors.grey,
-    this.color2 = Colors.blueGrey,
+    required this.color1,
+    required this.color2,
   });
 
   @override

@@ -63,8 +63,6 @@ class PinterestMenu extends StatelessWidget {
 }
 
 //------------------------------------------------------------------------
-//------------------------------------------------------------------------
-//------------------------------------------------------------------------
 class _PinterestMenuBackGround extends StatelessWidget {
   final Widget child;
   const _PinterestMenuBackGround({required this.child});
@@ -72,8 +70,6 @@ class _PinterestMenuBackGround extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color backgroundColor = Provider.of<_MenuModel>(context).backgroundColor;
-    Color activeColor = Provider.of<_MenuModel>(context).activeColor;
-    Color inactiveColor = Provider.of<_MenuModel>(context).inactiveColor;
 
     return Container(
       width: 250,
@@ -91,8 +87,6 @@ class _PinterestMenuBackGround extends StatelessWidget {
 }
 
 //------------------------------------------------------------------------
-//------------------------------------------------------------------------
-//------------------------------------------------------------------------
 class PinterestButton {
   final Function onPressed;
   final IconData icon;
@@ -100,8 +94,6 @@ class PinterestButton {
   PinterestButton({required this.onPressed, required this.icon});
 }
 
-//------------------------------------------------------------------------
-//------------------------------------------------------------------------
 //------------------------------------------------------------------------
 class _MenuItems extends StatelessWidget {
   final List<PinterestButton> menuItems;
@@ -121,8 +113,6 @@ class _MenuItems extends StatelessWidget {
 }
 
 //------------------------------------------------------------------------
-//------------------------------------------------------------------------
-//------------------------------------------------------------------------
 class _PinterestMenuButton extends StatelessWidget {
   final int index;
   final PinterestButton item;
@@ -131,8 +121,8 @@ class _PinterestMenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final itemSeleccionado = Provider.of<_MenuModel>(context).itemSeleccionado;
     final menuModel = Provider.of<_MenuModel>(context);
+    final itemSeleccionado = menuModel.itemSeleccionado;
     return GestureDetector(
       onTap: () {
         Provider.of<_MenuModel>(context, listen: false).itemSeleccionado =
@@ -152,8 +142,6 @@ class _PinterestMenuButton extends StatelessWidget {
   }
 }
 
-//------------------------------------------------------------------------
-//------------------------------------------------------------------------
 //------------------------------------------------------------------------
 class _MenuModel with ChangeNotifier {
   int _itemSeleccionado = 0;

@@ -26,6 +26,7 @@ class SlideShowPage extends StatelessWidget {
   }
 }
 
+//-------------------------------------------------------------------------------
 class _Slides extends StatefulWidget {
   @override
   State<_Slides> createState() => _SlidesState();
@@ -34,6 +35,7 @@ class _Slides extends StatefulWidget {
 class _SlidesState extends State<_Slides> {
   final pageViewController = PageController();
 
+  //--------------- initState -------------
   @override
   void initState() {
     pageViewController.addListener(() {
@@ -45,12 +47,14 @@ class _SlidesState extends State<_Slides> {
     super.initState();
   }
 
+  //--------------- dispose -------------
   @override
   void dispose() {
     pageViewController.dispose();
     super.dispose();
   }
 
+  //--------------- Pantalla -------------
   @override
   Widget build(BuildContext context) {
     return PageView(
@@ -64,6 +68,7 @@ class _SlidesState extends State<_Slides> {
   }
 }
 
+//-------------------------------------------------------------------------------
 class _Slide extends StatelessWidget {
   final String svg;
   const _Slide(this.svg);
@@ -79,6 +84,7 @@ class _Slide extends StatelessWidget {
   }
 }
 
+//-------------------------------------------------------------------------------
 class _Dots extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -93,6 +99,7 @@ class _Dots extends StatelessWidget {
   }
 }
 
+//-------------------------------------------------------------------------------
 class _Dot extends StatelessWidget {
   final int index;
 

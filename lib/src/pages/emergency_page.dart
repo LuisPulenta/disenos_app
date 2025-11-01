@@ -5,27 +5,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../widgets/boton_gordo.dart';
 import '../widgets/headers.dart';
 
-//---------------------------------------------------------------
-//----------------------- ItemBoton -----------------------------
-//---------------------------------------------------------------
-class ItemBoton {
-  final IconData icon;
-  final String texto;
-  final Color color1;
-  final Color color2;
-
-  ItemBoton(this.icon, this.texto, this.color1, this.color2);
-}
-
-//---------------------------------------------------------------
 //----------------------- EmergencyPage -------------------------
-//---------------------------------------------------------------
-
 class EmergencyPage extends StatelessWidget {
   const EmergencyPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    //------------ Variables ---------------
     bool isLarge;
     if (MediaQuery.of(context).size.height > 500) {
       isLarge = true;
@@ -125,6 +111,7 @@ class EmergencyPage extends StatelessWidget {
         )
         .toList();
 
+    //---------------- Pantalla ---------------
     return Scaffold(
       //appBar: AppBar(title: Text('EmergencyPage')),
       body: Stack(
@@ -146,31 +133,7 @@ class EmergencyPage extends StatelessWidget {
   }
 }
 
-//--------------------------------------------------------------------
-//----------------------- BotonGordoTemp -----------------------------
-//--------------------------------------------------------------------
-
-class BotonGordoTemp extends StatelessWidget {
-  const BotonGordoTemp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return BotonGordo(
-      icon: FontAwesomeIcons.carBurst,
-      texto: 'Automotores',
-      color1: const Color(0xff6989f5),
-      color2: const Color(0xff906EF5),
-      onPress: () {
-        //print('Automotores');
-      },
-    );
-  }
-}
-
-//----------------------------------------------------------------
 //----------------------- PageHeader -----------------------------
-//----------------------------------------------------------------
-
 class PageHeader extends StatelessWidget {
   const PageHeader({super.key});
 
@@ -201,4 +164,14 @@ class PageHeader extends StatelessWidget {
       ],
     );
   }
+}
+
+//----------------------- ItemBoton -----------------------------
+class ItemBoton {
+  final IconData icon;
+  final String texto;
+  final Color color1;
+  final Color color2;
+
+  ItemBoton(this.icon, this.texto, this.color1, this.color2);
 }

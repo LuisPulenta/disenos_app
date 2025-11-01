@@ -23,12 +23,13 @@ class SlideshowPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(title: const Text('SlideshowPage')),
+      appBar: AppBar(title: const Text('SlideshowPage'), centerTitle: true),
       body: isLarge ? Column(children: children) : Row(children: children),
     );
   }
 }
 
+//--------------------------------------------------------------------------
 class MiSlideshow extends StatelessWidget {
   const MiSlideshow({super.key});
 

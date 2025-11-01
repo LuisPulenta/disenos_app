@@ -25,8 +25,6 @@ class PinterestPage extends StatelessWidget {
 }
 
 //-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
 class _PinterestMenuLocation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -50,9 +48,11 @@ class _PinterestMenuLocation extends StatelessWidget {
               mostrar: mostrar,
               backgroundColor: appTheme.darkTheme
                   ? appTheme.currentTheme.scaffoldBackgroundColor
-                  : Color.fromARGB(255, 59, 255, 229),
-              activeColor: appTheme.darkTheme ? accentColor : Colors.teal,
-              inactiveColor: Colors.grey,
+                  : Color.fromARGB(255, 226, 226, 216),
+              activeColor: appTheme.darkTheme
+                  ? accentColor
+                  : const Color.fromARGB(255, 179, 3, 38),
+              inactiveColor: const Color.fromARGB(255, 6, 6, 6),
               items: [
                 PinterestButton(
                   icon: Icons.pie_chart,
@@ -89,8 +89,6 @@ class _PinterestMenuLocation extends StatelessWidget {
 }
 
 //-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
 class PinterestGrid extends StatefulWidget {
   const PinterestGrid({super.key});
 
@@ -103,28 +101,27 @@ class _PinterestGridState extends State<PinterestGrid> {
 
   ScrollController controller = ScrollController();
 
+  //------------ initState --------------
   @override
   void initState() {
     controller.addListener(() {
       if (controller.position.userScrollDirection == ScrollDirection.reverse) {
-        //Ocultar menú
-        //print('OCULTAR');
         Provider.of<_MenuModel>(context, listen: false).mostrar = false;
       } else {
-        //Mostrar menú
-        //print('MOSTRAR');
         Provider.of<_MenuModel>(context, listen: false).mostrar = true;
       }
     });
     super.initState();
   }
 
+  //------------ dispose --------------
   @override
   void dispose() {
     controller.dispose();
     super.dispose();
   }
 
+  //------------ Pantalla --------------
   @override
   Widget build(BuildContext context) {
     int count;
@@ -157,8 +154,6 @@ class _PinterestGridState extends State<PinterestGrid> {
 }
 
 //-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
 class _PinterestItem extends StatelessWidget {
   final int index;
   const _PinterestItem({required this.index});
@@ -173,15 +168,13 @@ class _PinterestItem extends StatelessWidget {
       child: Center(
         child: CircleAvatar(
           backgroundColor: Colors.white,
-          child: Text('$index'),
+          child: Text('$index', style: TextStyle(color: Colors.black)),
         ),
       ),
     );
   }
 }
 
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
 //-----------------------------------------------------------------------
 class _MenuModel with ChangeNotifier {
   bool _mostrar = true;

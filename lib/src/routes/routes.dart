@@ -31,17 +31,12 @@ final pageRoutes = <_Route>[
     screen: const GraficasCircularesPage(),
     icon: FontAwesomeIcons.circleNotch,
   ),
+
   _Route(
     route: 'slideshow',
     name: 'Slideshow',
     screen: const SlideshowPage(),
     icon: FontAwesomeIcons.slideshare,
-  ),
-  _Route(
-    route: 'emergency',
-    name: 'Emergency',
-    screen: const EmergencyPage(),
-    icon: FontAwesomeIcons.truckMedical,
   ),
 
   _Route(
@@ -50,6 +45,14 @@ final pageRoutes = <_Route>[
     screen: const PinterestPage(),
     icon: FontAwesomeIcons.pinterest,
   ),
+
+  _Route(
+    route: 'emergency',
+    name: 'Emergency',
+    screen: const EmergencyPage(),
+    icon: FontAwesomeIcons.truckMedical,
+  ),
+
   _Route(
     route: 'silvers',
     name: 'Silvers',
