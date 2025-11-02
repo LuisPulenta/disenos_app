@@ -52,7 +52,9 @@ class _PinterestMenuLocation extends StatelessWidget {
               activeColor: appTheme.darkTheme
                   ? accentColor
                   : const Color.fromARGB(255, 179, 3, 38),
-              inactiveColor: const Color.fromARGB(255, 6, 6, 6),
+              inactiveColor: appTheme.darkTheme
+                  ? const Color.fromARGB(255, 146, 146, 152)
+                  : accentColor,
               items: [
                 PinterestButton(
                   icon: Icons.pie_chart,

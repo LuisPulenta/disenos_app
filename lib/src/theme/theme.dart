@@ -14,17 +14,17 @@ class ThemeChanger with ChangeNotifier {
       case 1: //ligth
         _darkTheme = false;
         _customTheme = false;
-        _currentTheme = ThemeData.light().copyWith(
-          colorScheme: ColorScheme.fromSwatch().copyWith(
-            secondary: Colors.pink,
-          ),
-        );
+        _currentTheme = ThemeData.light();
         break;
 
       case 2: //dark
         _darkTheme = true;
         _customTheme = false;
-        _currentTheme = ThemeData.dark();
+        _currentTheme = ThemeData.dark().copyWith(
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            primary: Colors.yellow,
+          ),
+        );
         break;
 
       case 3: //ligth
@@ -35,11 +35,7 @@ class ThemeChanger with ChangeNotifier {
       default:
         _darkTheme = false;
         _customTheme = false;
-        _currentTheme = ThemeData.light().copyWith(
-          colorScheme: ColorScheme.fromSwatch().copyWith(
-            secondary: Colors.pink,
-          ),
-        );
+        _currentTheme = ThemeData.light();
         break;
     }
   }
@@ -50,9 +46,7 @@ class ThemeChanger with ChangeNotifier {
     if (value) {
       _currentTheme = ThemeData.dark();
     } else {
-      _currentTheme = ThemeData.light().copyWith(
-        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.pink),
-      );
+      _currentTheme = ThemeData.light();
     }
     notifyListeners();
   }
@@ -62,14 +56,17 @@ class ThemeChanger with ChangeNotifier {
     _customTheme = value;
     if (value) {
       _currentTheme = ThemeData.light().copyWith(
-        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.green),
-        primaryColor: Colors.white,
-        scaffoldBackgroundColor: const Color(0xff16202b),
-        textTheme: const TextTheme(bodyLarge: TextStyle(color: Colors.purple)),
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: Colors.green,
+          secondary: Colors.orange,
+        ),
+        // primaryColor: Colors.grey,
+        // scaffoldBackgroundColor: const Color(0xff16202b),
+        //textTheme: const TextTheme(bodyLarge: TextStyle(color: Colors.purple)),
       );
     } else {
       _currentTheme = ThemeData.light().copyWith(
-        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.pink),
+        // colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.pink),
       );
     }
     notifyListeners();

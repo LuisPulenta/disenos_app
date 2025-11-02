@@ -10,7 +10,7 @@ void main() => runApp(
   ChangeNotifierProvider(
     create: (_) => LayoutModel(),
     child: ChangeNotifierProvider(
-      create: (_) => ThemeChanger(0),
+      create: (_) => ThemeChanger(2),
       child: const MyApp(),
     ),
   ),

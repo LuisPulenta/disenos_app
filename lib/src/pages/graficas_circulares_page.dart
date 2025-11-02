@@ -32,7 +32,7 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
               CustomRadialProgress(
                 porcentaje: porcentaje * 0.9,
                 colorPrimario: Colors.green,
-                colorSecundario: Colors.black,
+                colorSecundario: Colors.yellow,
               ),
             ],
           ),

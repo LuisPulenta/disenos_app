@@ -29,8 +29,6 @@ class LauncherPage extends StatelessWidget {
 }
 
 //-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
 class _ListaOpciones extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -44,12 +42,12 @@ class _ListaOpciones extends StatelessWidget {
       itemBuilder: (context, i) => ListTile(
         leading: FaIcon(
           pageRoutes[i].icon,
-          color: appTheme.colorScheme.secondary,
+          color: appTheme.colorScheme.primary,
         ),
         title: Text(pageRoutes[i].name),
         trailing: FaIcon(
           FontAwesomeIcons.chevronRight,
-          color: appTheme.colorScheme.secondary,
+          color: appTheme.colorScheme.primary,
         ),
         onTap: () {
           Navigator.push(
@@ -63,20 +61,19 @@ class _ListaOpciones extends StatelessWidget {
 }
 
 //-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
 class _MenuPrincipal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appTheme = Provider.of<ThemeChanger>(context);
     final accentColor = appTheme.currentTheme.colorScheme.secondary;
+    final primary = appTheme.currentTheme.colorScheme.primary;
 
     return Drawer(
       child: Column(
         children: [
           SafeArea(
             child: Container(
-              color: Colors.teal[200],
+              //color: Colors.teal[200],
               padding: const EdgeInsets.all(20),
               width: double.infinity,
               height: 200,
@@ -88,25 +85,30 @@ class _MenuPrincipal extends StatelessWidget {
           ),
           Expanded(child: _ListaOpciones()),
           ListTile(
-            leading: Icon(Icons.lightbulb_outline, color: accentColor),
+            leading: Icon(Icons.lightbulb_outline, color: primary),
             title: const Text('Dark Mode'),
-            trailing: Switch.adaptive(
+            trailing: Switch(
               value: appTheme.darkTheme,
               onChanged: (value) {
                 appTheme.darkTheme = value;
               },
-              activeColor: accentColor,
+
+              activeThumbColor: primary,
+              inactiveThumbColor: Colors.grey[300],
+              inactiveTrackColor: Colors.grey,
             ),
           ),
           ListTile(
-            leading: Icon(Icons.add_to_home_screen, color: accentColor),
+            leading: Icon(Icons.add_to_home_screen, color: primary),
             title: const Text('Custom Theme'),
-            trailing: Switch.adaptive(
+            trailing: Switch(
               value: appTheme.customTheme,
               onChanged: (value) {
                 appTheme.customTheme = value;
               },
-              activeColor: accentColor,
+              activeThumbColor: primary,
+              inactiveThumbColor: Colors.grey[300],
+              inactiveTrackColor: Colors.grey,
             ),
           ),
         ],
